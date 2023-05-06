@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/UcoCrossCutting/pom.xml" />
+        <option value="$PROJECT_DIR$/PubliucoEntity/pom.xml" />
+        <option value="$PROJECT_DIR$/PubliucoService/pom.xml" />
+        <option value="$PROJECT_DIR$/PubliucoCrossCutting/pom.xml" />
+        <option value="$PROJECT_DIR$/PubliucoDTO/pom.xml" />
+        <option value="$PROJECT_DIR$/PubliucoRepository/pom.xml" />
+        <option value="$PROJECT_DIR$/PubliucoAPI/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
