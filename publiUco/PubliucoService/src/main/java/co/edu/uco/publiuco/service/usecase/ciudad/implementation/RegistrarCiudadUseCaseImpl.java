@@ -5,7 +5,6 @@ import co.edu.uco.publiuco.repository.CiudadRepository;
 import co.edu.uco.publiuco.service.domain.CiudadDomain;
 import co.edu.uco.publiuco.service.usecase.ciudad.RegistrarCiudadUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 @Service
