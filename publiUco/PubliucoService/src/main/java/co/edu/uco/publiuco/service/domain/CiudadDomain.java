@@ -9,11 +9,27 @@ public class CiudadDomain {
     private DepartamentoDTO departamento;
     private String ciudad;
 
-    private UUID getCodigo() {
+    public DepartamentoDTO getDepartamento() {
+        return departamento;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public UUID getCodigo() {
         return codigo;
     }
 
     private void setCodigo(UUID codigo) {
         this.codigo = codigo;
+    }
+
+    private void setDepartamento(DepartamentoDTO departamento) {
+        this.departamento = departamento;
+    }
+
+    private void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 }

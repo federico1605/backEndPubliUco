@@ -11,6 +11,14 @@ public class PaisDomain {
         return codigo;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    private void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     private void setCodigo(UUID codigo) {
         this.codigo = codigo;
     }
