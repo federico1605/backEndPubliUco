@@ -5,9 +5,6 @@ n
 Q.idea/sonarlint/securityhotspotstore/4/1/410ba1540b8291206116c04f059976639ece9533,1\1\11c524e7aabb8ba67195756927b5374d2543fc7f
 Å
 Q.idea/sonarlint/securityhotspotstore/3/3/3358ae1dbce33273460ce66f913988338ec71567,4\9\490663e7aba2f12ce828f6f7e57e262a709d704a
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 ~
 NPubliucoService/src/main/java/co/edu/uco/publiuco/service/usecase/UseCase.java,1\5\158660c309b731cc88329b7913c0c6a654c124b1
 Ö
@@ -24,5 +21,3 @@ SPubliucoRepository/src/main/java/co/edu/uco/publiuco/repository/PaisRepository.
 vPubliucoService/src/main/java/co/edu/uco/publiuco/service/usecase/ciudad/implementation/ListarCiudadesUseCaseImpl.java,b\0\b04c5d662578aec9a5863db3ced830c9a41abce9
 ã
 [PubliucoRepository/src/main/java/co/edu/uco/publiuco/repository/DepartamentoRepository.java,e\8\e88a4135b2eaa29439e2330234e7bea127add945
-í
-bPubliucoAPI/src/main/java/co/edu/uco/publiuco/api/controller/ciudad/RegistrarCiudadController.java,3\b\3b3c7ed7f699d55b80b088b01078bf3f9c91ea57
