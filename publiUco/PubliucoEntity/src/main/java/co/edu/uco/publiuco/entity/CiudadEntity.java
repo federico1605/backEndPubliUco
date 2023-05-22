@@ -19,5 +19,5 @@ public class CiudadEntity {
     @ManyToOne
     @JoinColumn(name = "departamento")
     private DepartamentoEntity departamentoEntity;
-    private String ciudad;
+    private String nombre;
 }

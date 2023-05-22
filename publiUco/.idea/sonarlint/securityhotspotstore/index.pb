@@ -1,6 +1,4 @@
 
-n
->PubliucoDTO/src/main/java/co/edu/uco/publiuco/dto/PaisDTO.java,4\1\410ba1540b8291206116c04f059976639ece9533
 Å
 Q.idea/sonarlint/securityhotspotstore/4/1/410ba1540b8291206116c04f059976639ece9533,1\1\11c524e7aabb8ba67195756927b5374d2543fc7f
 Å
@@ -21,3 +19,15 @@ iPubliucoService/src/main/java/co/edu/uco/publiuco/service/facade/ciudad/Registr
 SPubliucoRepository/src/main/java/co/edu/uco/publiuco/repository/PaisRepository.java,b\2\b25870b9c85a44442b1f27ecf70e8a8c14ccd589
 ¶
 vPubliucoService/src/main/java/co/edu/uco/publiuco/service/usecase/ciudad/implementation/ListarCiudadesUseCaseImpl.java,b\0\b04c5d662578aec9a5863db3ced830c9a41abce9
+F
+PubliucoEntity/pom.xml,2\8\28742c99f743b28272ca5caedf41b014f6013b4d
+B
+PubliucoEntity.iml,5\6\56bb6cf47985ce3adcbb124354eee4bd0f7761cb
+G
+PubliucoService/pom.xml,e\0\e0b2f223b3e8403d32409cedcb70b85e065ca55e
+ß
+wPubliucoService/src/main/java/co/edu/uco/publiuco/service/usecase/ciudad/implementation/RegistrarCiudadUseCaseImpl.java,4\6\461983a7d202ef329e62bb8283c5d6ae316dd273
+C
+PubliucoAPI/pom.xml,3\e\3e82ed51206d24c74c993a6da3eaed0ec3f83734
+J
+PubliucoRepository/pom.xml,7\8\78cd358051df70a191346c9ff52878fc838a8228
