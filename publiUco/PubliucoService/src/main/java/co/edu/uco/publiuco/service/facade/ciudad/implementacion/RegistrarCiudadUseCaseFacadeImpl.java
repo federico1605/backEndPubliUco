@@ -17,8 +17,6 @@ public class RegistrarCiudadUseCaseFacadeImpl implements RegistrarCiudadUseCaseF
     @Override
     public void execute(CiudadDTO dto) {
         //Sirve el assembler para llevar de DTO a Domian
-        CiudadDomain domain = null;
-
-        registrarCiudadUseCase.execute(domain);
+        registrarCiudadUseCase.execute(dto);
     }
 }

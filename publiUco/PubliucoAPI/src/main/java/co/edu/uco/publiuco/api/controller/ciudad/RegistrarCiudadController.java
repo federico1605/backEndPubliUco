@@ -14,9 +14,17 @@ public class RegistrarCiudadController {
     private RegistrarCiudadUseCaseFacade facade;
 
     @PostMapping()
-    public ResponseEntity<String> execute(@RequestBody CiudadDTO ciudad){
-        //validators
-        facade.execute(ciudad);
-        return new ResponseEntity<>("Exito", HttpStatus.ACCEPTED);
+    public ResponseEntity<CiudadDTO> createCiudad(@RequestBody CiudadDTO ciudad){
+        ResponseEntity<CiudadDTO> responseEntity;
+
+        HttpStatus httpStatus = HttpStatus.CREATED;
+
+        try {
+            facade.execute(ciudad);
+        } catch () {
+
+        }
+
+        return new ResponseEntity<CiudadDTO>(httpStatus);
     }
 }
