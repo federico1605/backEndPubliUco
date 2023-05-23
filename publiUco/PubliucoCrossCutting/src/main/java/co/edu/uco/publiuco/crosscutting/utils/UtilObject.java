@@ -7,8 +7,6 @@ public class UtilObject {
     private UtilObject() {
 
     }
-
-
     public static final <T> boolean isNull(T value) {
         return value == null;
     }

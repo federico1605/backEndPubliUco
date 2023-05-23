@@ -1,7 +1,7 @@
 package co.edu.uco.publiuco.crosscutting.utils;
 
 
-import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getUtilObject;
+import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getDefaultIfNull;
 
 public class UtilNumeric {
 
@@ -17,7 +17,7 @@ public class UtilNumeric {
     }
 
     public <T extends Number> T getDefault(T value, T defaultValue) {
-        return getUtilObject().getDefault(value, defaultValue);
+        return getDefaultIfNull(value, defaultValue);
 
     }
 

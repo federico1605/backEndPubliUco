@@ -1,9 +1,13 @@
 package co.edu.uco.publiuco.dto;
 
+import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
+
 import java.util.UUID;
 
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getNewUUID;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.EMPTY;
+import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
+import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 
 public class PaisDTO {
 
@@ -16,7 +20,7 @@ public class PaisDTO {
     }
 
     public PaisDTO() {
-        setCodigo(getNewUUID());
+        setCodigo(UtilUUID.getStringAsUUID());
         setNombre(EMPTY);
     }
 
@@ -29,7 +33,7 @@ public class PaisDTO {
     }
 
     public void setCodigo(UUID codigo) {
-        this.codigo = codigo;
+        this.codigo = codigo == null ? getNewUUID() : getDefaultUUID(codigo);
     }
 
     public String getNombre() {
@@ -37,6 +41,6 @@ public class PaisDTO {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre = applyTrim(nombre);
     }
 }

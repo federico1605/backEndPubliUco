@@ -18,7 +18,6 @@ public class UtilUUID {
     }
 
     public static final UUID getNewUUID() {
-
         UUID uuid;
         do {
             uuid = UUID.randomUUID();
@@ -30,11 +29,11 @@ public class UtilUUID {
         return getDefaultUUID(value).toString();
     }
 
-    public static final boolean isDefaultUUID(final UUID value) {
-        return DEFAULT_UUID.equals(value);
+    public static final UUID getStringAsUUID() {
+        return UUID.fromString(DEFAULT_UUID_AS_STRING);
     }
 
-    public static final String getRandomUUIDAsString() {
-        return getNewUUID().toString();
+    public static final boolean isDefaultUUID(final UUID value) {
+        return DEFAULT_UUID.equals(value);
     }
 }

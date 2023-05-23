@@ -1,9 +1,13 @@
 package co.edu.uco.publiuco.dto;
 
+import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
+
 import java.util.UUID;
 
-import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getNewUUID;
+import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getDefaultIfNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.EMPTY;
+import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
+import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 
 public class CiudadDTO {
     private UUID codigo;
@@ -17,7 +21,7 @@ public class CiudadDTO {
     }
 
     public CiudadDTO() {
-        setCodigo(getNewUUID());
+        setCodigo(UtilUUID.getStringAsUUID());
         setDepartamento(DepartamentoDTO.create());
         setNombre(EMPTY);
     }
@@ -27,22 +31,28 @@ public class CiudadDTO {
     }
 
     public void setCodigo(UUID codigo) {
-        this.codigo = codigo;
+        this.codigo = codigo == null ? UtilUUID.getNewUUID() : UtilUUID.getDefaultUUID(codigo);
     }
 
     public DepartamentoDTO getDepartamento() {
+        if (isNull(departamento)) {
+            setDepartamento(DepartamentoDTO.create());
+        }
         return departamento;
     }
 
     public void setDepartamento(DepartamentoDTO departamento) {
-        this.departamento = departamento;
+        this.departamento = getDefaultIfNull(departamento, new DepartamentoDTO());
     }
 
     public String getNombre() {
+        if (isNull(nombre)) {
+            setNombre(EMPTY);
+        }
         return nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre = applyTrim(nombre);
     }
 }

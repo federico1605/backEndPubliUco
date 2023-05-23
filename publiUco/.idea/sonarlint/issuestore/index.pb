@@ -7,14 +7,10 @@ Q.idea/sonarlint/securityhotspotstore/3/3/3358ae1dbce33273460ce66f913988338ec715
 NPubliucoService/src/main/java/co/edu/uco/publiuco/service/usecase/UseCase.java,1\5\158660c309b731cc88329b7913c0c6a654c124b1
 …
 UPubliucoRepository/src/main/java/co/edu/uco/publiuco/repository/CiudadRepository.java,e\5\e5b6b715cfee26bf3ca0af92e879f3010703c5c3
-‚
-RPubliucoService/src/main/java/co/edu/uco/publiuco/service/domain/CiudadDomain.java,e\0\e03fe540072deb28f54b5a3a1a7cda2dc7fe3e89
 ™
 iPubliucoService/src/main/java/co/edu/uco/publiuco/service/facade/ciudad/RegistrarCiudadUseCaseFacade.java,e\6\e65aa7d8287a7cf05d0732b55d9908bf9abf8e27
 ƒ
 SPubliucoRepository/src/main/java/co/edu/uco/publiuco/repository/PaisRepository.java,b\2\b25870b9c85a44442b1f27ecf70e8a8c14ccd589
-¬
-|PubliucoService/src/main/java/co/edu/uco/publiuco/service/facade/ciudad/implementacion/RegistrarCiudadUseCaseFacadeImpl.java,9\c\9c06911706873477f464ab29edc1859a64ba87fc
 ¦
 vPubliucoService/src/main/java/co/edu/uco/publiuco/service/usecase/ciudad/implementation/ListarCiudadesUseCaseImpl.java,b\0\b04c5d662578aec9a5863db3ced830c9a41abce9
 ‹
