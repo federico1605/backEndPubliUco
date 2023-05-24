@@ -3,6 +3,7 @@ package co.edu.uco.publiuco.service.usecase.ciudad.implementation;
 import co.edu.uco.publiuco.entity.CiudadEntity;
 import co.edu.uco.publiuco.repository.CiudadRepository;
 import co.edu.uco.publiuco.service.domain.CiudadDomain;
+import co.edu.uco.publiuco.service.mapper.entityassembler.EntityAssembler;
 import co.edu.uco.publiuco.service.usecase.ciudad.RegistrarCiudadUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,9 @@ public class RegistrarCiudadUseCaseImpl implements RegistrarCiudadUseCase {
 
     @Autowired
     private CiudadRepository ciudadRepository;
+
+    @Autowired
+    private EntityAssembler<CiudadEntity,CiudadDomain> entityAssembler;
     @Override
     public void execute(CiudadDomain domain) {
         //Crear las reglas de negocio
@@ -23,7 +27,7 @@ public class RegistrarCiudadUseCaseImpl implements RegistrarCiudadUseCase {
         //Son obligaotrio
 
         //Crear el ensalblador
-        CiudadEntity entity = null;
+        CiudadEntity entity = entityAssembler.assembleEntity(domain);
         ciudadRepository.save(entity);
     }
 }

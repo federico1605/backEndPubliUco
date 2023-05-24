@@ -19,11 +19,6 @@ public class RegistrarCiudadController {
 
         HttpStatus httpStatus = HttpStatus.CREATED;
 
-        try {
-            facade.execute(ciudad);
-        } catch () {
-
-        }
 
         return new ResponseEntity<CiudadDTO>(httpStatus);
     }

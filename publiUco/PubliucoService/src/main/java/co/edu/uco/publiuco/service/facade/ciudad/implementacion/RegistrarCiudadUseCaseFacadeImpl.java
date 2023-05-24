@@ -3,6 +3,7 @@ package co.edu.uco.publiuco.service.facade.ciudad.implementacion;
 import co.edu.uco.publiuco.dto.CiudadDTO;
 import co.edu.uco.publiuco.service.domain.CiudadDomain;
 import co.edu.uco.publiuco.service.facade.ciudad.RegistrarCiudadUseCaseFacade;
+import co.edu.uco.publiuco.service.mapper.dtoassambler.DTOAssembler;
 import co.edu.uco.publiuco.service.usecase.ciudad.RegistrarCiudadUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,9 +15,13 @@ public class RegistrarCiudadUseCaseFacadeImpl implements RegistrarCiudadUseCaseF
 
     @Autowired
     private RegistrarCiudadUseCase registrarCiudadUseCase;
+
+    @Autowired
+    private DTOAssembler<CiudadDTO,CiudadDomain> dtoAssembler;
+
     @Override
     public void execute(CiudadDTO dto) {
         //Sirve el assembler para llevar de DTO a Domian
-        registrarCiudadUseCase.execute(dto);
+        registrarCiudadUseCase.execute(dtoAssembler.assembleDomain(dto));
     }
 }
