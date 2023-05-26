@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PaisDTOAssembler implements DTOAssembler<PaisDTO,PaisDomain> {
 
-    private final ModelMapper modelMapper;
+    private  ModelMapper modelMapper;
 
-    public PaisDTOAssembler(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
+    public PaisDTOAssembler() {
+        this.modelMapper = new ModelMapper();
     }
 
     @Override

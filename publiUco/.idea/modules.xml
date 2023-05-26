@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PubliucoEntity.iml" filepath="$PROJECT_DIR$/PubliucoEntity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PubliucoRepository.iml" filepath="$PROJECT_DIR$/PubliucoRepository.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/publiUco.iml" filepath="$PROJECT_DIR$/.idea/publiUco.iml" />
     </modules>
   </component>

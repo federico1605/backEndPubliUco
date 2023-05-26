@@ -13,13 +13,20 @@ public class RegistrarCiudadController {
     @Autowired
     private RegistrarCiudadUseCaseFacade facade;
 
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<CiudadDTO> createCiudad(@RequestBody CiudadDTO ciudad){
         ResponseEntity<CiudadDTO> responseEntity;
 
         HttpStatus httpStatus = HttpStatus.CREATED;
+        try {
+            facade.execute(ciudad);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            httpStatus = HttpStatus.BAD_REQUEST;
+        }
 
 
-        return new ResponseEntity<CiudadDTO>(httpStatus);
+
+        return new ResponseEntity<>(ciudad,httpStatus);
     }
 }

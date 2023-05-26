@@ -6,13 +6,15 @@ import co.edu.uco.publiuco.service.domain.CiudadDomain;
 import co.edu.uco.publiuco.service.domain.DepartamentoDomain;
 import co.edu.uco.publiuco.service.mapper.entityassembler.EntityAssembler;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DepartamentoEntityAssembler implements EntityAssembler<DepartamentoEntity, DepartamentoDomain> {
 
-    private final ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
-    public DepartamentoEntityAssembler(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
+    public DepartamentoEntityAssembler() {
+        this.modelMapper = new ModelMapper();
     }
 
     @Override

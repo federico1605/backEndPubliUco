@@ -26,7 +26,7 @@ public class ServicePubliUcoCustomException extends PubliUcoCustomException{
         return new ServicePubliUcoCustomException(rootException, technicalMessage,EMPTY);
     }
 
-    public static final PubliUcoCustomException createUserException(final String userMessage, final Exception rootException) {
-        return new ServicePubliUcoCustomException(rootException, userMessage, userMessage);
+    public static final PubliUcoCustomException createUserException(final String userMessage) {
+        return new ServicePubliUcoCustomException(null, userMessage,userMessage);
     }
 }

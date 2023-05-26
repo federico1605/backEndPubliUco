@@ -1,15 +1,28 @@
 package co.edu.uco.publiuco.service.domain;
 
-import co.edu.uco.publiuco.dto.DepartamentoDTO;
+import co.edu.uco.publiuco.crosscutting.utils.UtilText;
+import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
 
 import java.util.UUID;
 
 public class CiudadDomain {
     private UUID codigo;
-    private DepartamentoDTO departamento;
+    private DepartamentoDomain departamento;
     private String ciudad;
 
-    public DepartamentoDTO getDepartamento() {
+    public CiudadDomain(UUID codigo, DepartamentoDomain departamento, String ciudad) {
+        setCodigo(codigo);
+        setDepartamento(departamento);
+        setCiudad(ciudad);
+    }
+
+    public CiudadDomain() {
+        setCiudad(UtilText.EMPTY);
+        setCodigo(UtilUUID.getStringAsUUID());
+        setDepartamento(new DepartamentoDomain());
+    }
+
+    public DepartamentoDomain getDepartamento() {
         return departamento;
     }
 
@@ -21,15 +34,15 @@ public class CiudadDomain {
         return codigo;
     }
 
-    private void setCodigo(UUID codigo) {
+    public void setCodigo(UUID codigo) {
         this.codigo = codigo;
     }
 
-    private void setDepartamento(DepartamentoDTO departamento) {
+    public void setDepartamento(DepartamentoDomain departamento) {
         this.departamento = departamento;
     }
 
-    private void setCiudad(String ciudad) {
+    public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
 }

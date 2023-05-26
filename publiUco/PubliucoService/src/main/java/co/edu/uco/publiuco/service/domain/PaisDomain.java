@@ -7,7 +7,7 @@ public class PaisDomain {
     private UUID codigo;
     private String nombre;
 
-    private UUID getCodigo() {
+    public UUID getCodigo() {
         return codigo;
     }
 
@@ -15,11 +15,11 @@ public class PaisDomain {
         return nombre;
     }
 
-    private void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    private void setCodigo(UUID codigo) {
+    public void setCodigo(UUID codigo) {
         this.codigo = codigo;
     }
 }

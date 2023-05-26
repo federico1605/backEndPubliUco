@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class DepartamentoDTOToDomain implements DTOAssembler<DepartamentoDTO, DepartamentoDomain> {
 
-    private final ModelMapper modelMapper;
+    private  ModelMapper modelMapper;
 
-    public DepartamentoDTOToDomain(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
+    public DepartamentoDTOToDomain() {
+        this.modelMapper = new ModelMapper();
     }
 
     @Override

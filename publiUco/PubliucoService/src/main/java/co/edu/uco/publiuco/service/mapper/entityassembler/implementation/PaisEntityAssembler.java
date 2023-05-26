@@ -4,13 +4,15 @@ import co.edu.uco.publiuco.entity.PaisEntity;
 import co.edu.uco.publiuco.service.domain.PaisDomain;
 import co.edu.uco.publiuco.service.mapper.entityassembler.EntityAssembler;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PaisEntityAssembler implements EntityAssembler<PaisEntity, PaisDomain> {
 
-    private final ModelMapper modelMapper;
+    private  ModelMapper modelMapper;
 
-    public PaisEntityAssembler(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
+    public PaisEntityAssembler() {
+        this.modelMapper = new ModelMapper();
     }
 
     @Override

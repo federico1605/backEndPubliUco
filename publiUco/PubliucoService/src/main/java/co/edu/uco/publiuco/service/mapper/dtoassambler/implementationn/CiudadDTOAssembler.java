@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class CiudadDTOAssembler implements DTOAssembler<CiudadDTO,CiudadDomain> {
 
-    private final ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
-    public CiudadDTOAssembler(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
+    public CiudadDTOAssembler() {
+        this.modelMapper = new ModelMapper();
     }
 
     @Override
