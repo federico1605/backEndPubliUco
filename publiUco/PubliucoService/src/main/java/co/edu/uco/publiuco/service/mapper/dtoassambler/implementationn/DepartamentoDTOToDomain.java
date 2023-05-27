@@ -1,13 +1,13 @@
 package co.edu.uco.publiuco.service.mapper.dtoassambler.implementationn;
 
-import co.edu.uco.publiuco.dto.DepartamentoDTO;
-import co.edu.uco.publiuco.service.domain.DepartamentoDomain;
+import co.edu.uco.publiuco.dto.DepartmentDTO;
+import co.edu.uco.publiuco.service.domain.DepartmentDomain;
 import co.edu.uco.publiuco.service.mapper.dtoassambler.DTOAssembler;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DepartamentoDTOToDomain implements DTOAssembler<DepartamentoDTO, DepartamentoDomain> {
+public class DepartamentoDTOToDomain implements DTOAssembler<DepartmentDTO, DepartmentDomain> {
 
     private  ModelMapper modelMapper;
 
@@ -16,12 +16,12 @@ public class DepartamentoDTOToDomain implements DTOAssembler<DepartamentoDTO, De
     }
 
     @Override
-    public DepartamentoDomain assembleDomain(DepartamentoDTO dto) {
-        return modelMapper.map(dto, DepartamentoDomain.class);
+    public DepartmentDomain assembleDomain(DepartmentDTO dto) {
+        return modelMapper.map(dto, DepartmentDomain.class);
     }
 
     @Override
-    public DepartamentoDTO assembleDTO(DepartamentoDomain domain) {
-        return modelMapper.map(domain, DepartamentoDTO.class);
+    public DepartmentDTO assembleDTO(DepartmentDomain domain) {
+        return modelMapper.map(domain, DepartmentDTO.class);
     }
 }

@@ -1,9 +1,7 @@
 package co.edu.uco.publiuco.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import java.util.UUID;
 
 import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getDefaultIfNull;
@@ -14,20 +12,25 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
 
 @Entity
-@Table(name = "pais")
-public class PaisEntity {
+@Table(name = "departamento")
+public class DepartmentEntity {
 
     @Id
     private UUID codigo;
+    @ManyToOne
+    @JoinColumn(name = "pais")
+    private CountryEntity countryEntity;
     private String nombre;
 
-    public PaisEntity(UUID codigo, String nombre) {
+    public DepartmentEntity(UUID codigo, CountryEntity countryEntity, String nombre) {
         this.codigo = codigo;
+        this.countryEntity = countryEntity;
         this.nombre = nombre;
     }
 
-    public PaisEntity() {
+    public DepartmentEntity() {
         setCodigo(getStringAsUUID());
+        setPaisEntity(new CountryEntity());
         setNombre(EMPTY);
     }
 
@@ -42,6 +45,17 @@ public class PaisEntity {
         this.codigo = getDefaultUUID(codigo);
     }
 
+    public CountryEntity getPaisEntity() {
+        if (isNull(countryEntity)) {
+            setPaisEntity(new CountryEntity());
+        }
+        return countryEntity;
+    }
+
+    public void setPaisEntity(final CountryEntity countryEntity) {
+        this.countryEntity = getDefaultIfNull(countryEntity, new CountryEntity());
+    }
+
     public String getNombre() {
         if (isNull(nombre)) {
             setNombre(EMPTY);
@@ -49,7 +63,7 @@ public class PaisEntity {
         return nombre;
     }
 
-    public void setNombre(final String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = applyTrim(nombre);
     }
 }

@@ -1,13 +1,13 @@
 package co.edu.uco.publiuco.service.mapper.entityassembler.implementation;
 
-import co.edu.uco.publiuco.entity.PaisEntity;
-import co.edu.uco.publiuco.service.domain.PaisDomain;
+import co.edu.uco.publiuco.entity.CountryEntity;
+import co.edu.uco.publiuco.service.domain.CountryDomain;
 import co.edu.uco.publiuco.service.mapper.entityassembler.EntityAssembler;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PaisEntityAssembler implements EntityAssembler<PaisEntity, PaisDomain> {
+public class PaisEntityAssembler implements EntityAssembler<CountryEntity, CountryDomain> {
 
     private  ModelMapper modelMapper;
 
@@ -16,12 +16,12 @@ public class PaisEntityAssembler implements EntityAssembler<PaisEntity, PaisDoma
     }
 
     @Override
-    public PaisDomain assembleDomain(PaisEntity entity) {
-        return modelMapper.map(entity, PaisDomain.class);
+    public CountryDomain assembleDomain(CountryEntity entity) {
+        return modelMapper.map(entity, CountryDomain.class);
     }
 
     @Override
-    public PaisEntity assembleEntity(PaisDomain domain) {
-        return modelMapper.map(domain, PaisEntity.class);
+    public CountryEntity assembleEntity(CountryDomain domain) {
+        return modelMapper.map(domain, CountryEntity.class);
     }
 }

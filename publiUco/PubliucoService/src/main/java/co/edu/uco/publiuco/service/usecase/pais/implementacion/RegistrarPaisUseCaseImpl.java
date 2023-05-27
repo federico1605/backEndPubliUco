@@ -1,11 +1,11 @@
 package co.edu.uco.publiuco.service.usecase.pais.implementacion;
 
-import co.edu.uco.publiuco.service.domain.PaisDomain;
+import co.edu.uco.publiuco.service.domain.CountryDomain;
 import co.edu.uco.publiuco.service.usecase.UseCase;
 
-public class RegistrarPaisUseCaseImpl implements UseCase<PaisDomain> {
+public class RegistrarPaisUseCaseImpl implements UseCase<CountryDomain> {
     @Override
-    public void execute(PaisDomain domain) {
+    public void execute(CountryDomain domain) {
 
     }
 }

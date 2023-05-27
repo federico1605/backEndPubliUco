@@ -1,6 +1,6 @@
 package co.edu.uco.publiuco.api.controller.ciudad;
 
-import co.edu.uco.publiuco.dto.CiudadDTO;
+import co.edu.uco.publiuco.dto.CityDTO;
 import co.edu.uco.publiuco.service.facade.ciudad.RegistrarCiudadUseCaseFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,8 +14,8 @@ public class RegistrarCiudadController {
     private RegistrarCiudadUseCaseFacade facade;
 
     @PostMapping
-    public ResponseEntity<CiudadDTO> createCiudad(@RequestBody CiudadDTO ciudad){
-        ResponseEntity<CiudadDTO> responseEntity;
+    public ResponseEntity<CityDTO> createCiudad(@RequestBody CityDTO ciudad){
+        ResponseEntity<CityDTO> responseEntity;
 
         HttpStatus httpStatus = HttpStatus.CREATED;
         try {

@@ -9,23 +9,23 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilText.EMPTY;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 
-public class PaisDTO {
+public class CountryDTO {
 
     private UUID codigo;
     private String nombre;
 
-    public PaisDTO(final UUID codigo,final String nombre) {
+    public CountryDTO(final UUID codigo, final String nombre) {
         setCodigo(codigo);
         setNombre(nombre);
     }
 
-    public PaisDTO() {
+    public CountryDTO() {
         setCodigo(UtilUUID.getStringAsUUID());
         setNombre(EMPTY);
     }
 
-    public static final PaisDTO create(){
-        return new PaisDTO();
+    public static final CountryDTO create(){
+        return new CountryDTO();
     }
 
     public UUID getCodigo() {

@@ -1,14 +1,14 @@
 package co.edu.uco.publiuco.service.mapper.dtoassambler.implementationn;
 
 
-import co.edu.uco.publiuco.dto.PaisDTO;
-import co.edu.uco.publiuco.service.domain.PaisDomain;
+import co.edu.uco.publiuco.dto.CountryDTO;
+import co.edu.uco.publiuco.service.domain.CountryDomain;
 import co.edu.uco.publiuco.service.mapper.dtoassambler.DTOAssembler;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PaisDTOAssembler implements DTOAssembler<PaisDTO,PaisDomain> {
+public class PaisDTOAssembler implements DTOAssembler<CountryDTO, CountryDomain> {
 
     private  ModelMapper modelMapper;
 
@@ -17,12 +17,12 @@ public class PaisDTOAssembler implements DTOAssembler<PaisDTO,PaisDomain> {
     }
 
     @Override
-    public PaisDomain assembleDomain(PaisDTO dto) {
-        return modelMapper.map(dto, PaisDomain.class);
+    public CountryDomain assembleDomain(CountryDTO dto) {
+        return modelMapper.map(dto, CountryDomain.class);
     }
 
     @Override
-    public PaisDTO assembleDTO(PaisDomain domain) {
-        return modelMapper.map(domain, PaisDTO.class);
+    public CountryDTO assembleDTO(CountryDomain domain) {
+        return modelMapper.map(domain, CountryDTO.class);
     }
 }

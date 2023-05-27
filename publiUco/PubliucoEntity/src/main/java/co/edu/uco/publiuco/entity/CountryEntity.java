@@ -1,10 +1,10 @@
 package co.edu.uco.publiuco.entity;
 
-import jakarta.persistence.*;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.util.UUID;
 
-import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getDefaultIfNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getStringAsUUID;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.EMPTY;
@@ -12,25 +12,20 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
 
 @Entity
-@Table(name = "departamento")
-public class DepartamentoEntity {
+@Table(name = "pais")
+public class CountryEntity {
 
     @Id
     private UUID codigo;
-    @ManyToOne
-    @JoinColumn(name = "pais")
-    private PaisEntity paisEntity;
     private String nombre;
 
-    public DepartamentoEntity(UUID codigo, PaisEntity paisEntity, String nombre) {
+    public CountryEntity(UUID codigo, String nombre) {
         this.codigo = codigo;
-        this.paisEntity = paisEntity;
         this.nombre = nombre;
     }
 
-    public DepartamentoEntity() {
+    public CountryEntity() {
         setCodigo(getStringAsUUID());
-        setPaisEntity(new PaisEntity());
         setNombre(EMPTY);
     }
 
@@ -45,17 +40,6 @@ public class DepartamentoEntity {
         this.codigo = getDefaultUUID(codigo);
     }
 
-    public PaisEntity getPaisEntity() {
-        if (isNull(paisEntity)) {
-            setPaisEntity(new PaisEntity());
-        }
-        return paisEntity;
-    }
-
-    public void setPaisEntity(final PaisEntity paisEntity) {
-        this.paisEntity = getDefaultIfNull(paisEntity, new PaisEntity());
-    }
-
     public String getNombre() {
         if (isNull(nombre)) {
             setNombre(EMPTY);
@@ -63,7 +47,7 @@ public class DepartamentoEntity {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(final String nombre) {
         this.nombre = applyTrim(nombre);
     }
 }

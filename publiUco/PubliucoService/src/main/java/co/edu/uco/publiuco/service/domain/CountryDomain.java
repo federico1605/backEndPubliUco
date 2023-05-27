@@ -2,7 +2,7 @@ package co.edu.uco.publiuco.service.domain;
 
 import java.util.UUID;
 
-public class PaisDomain {
+public class CountryDomain {
 
     private UUID codigo;
     private String nombre;

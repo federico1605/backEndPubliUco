@@ -19,18 +19,18 @@ public class CiudadEntity {
     private UUID codigo;
     @ManyToOne
     @JoinColumn(name = "departamento")
-    private DepartamentoEntity departamentoEntity;
+    private DepartmentEntity departmentEntity;
     private String nombre;
 
-    public CiudadEntity(UUID codigo, DepartamentoEntity departamentoEntity, String nombre) {
+    public CiudadEntity(UUID codigo, DepartmentEntity departmentEntity, String nombre) {
         setCodigo(codigo);
-        setDepartamentoEntity(departamentoEntity);
+        setDepartamentoEntity(departmentEntity);
         setNombre(nombre);
     }
 
     public CiudadEntity() {
         setCodigo(getStringAsUUID());
-        setDepartamentoEntity(new DepartamentoEntity());
+        setDepartamentoEntity(new DepartmentEntity());
         setNombre(EMPTY);
     }
 
@@ -45,15 +45,15 @@ public class CiudadEntity {
         this.codigo = getDefaultUUID(codigo);
     }
 
-    public DepartamentoEntity getDepartamentoEntity() {
-        if (isNull(departamentoEntity)) {
-            setDepartamentoEntity(new DepartamentoEntity());
+    public DepartmentEntity getDepartamentoEntity() {
+        if (isNull(departmentEntity)) {
+            setDepartamentoEntity(new DepartmentEntity());
         }
-        return departamentoEntity;
+        return departmentEntity;
     }
 
-    public void setDepartamentoEntity(final DepartamentoEntity departamentoEntity) {
-        this.departamentoEntity = getDefaultIfNull(departamentoEntity, new DepartamentoEntity());
+    public void setDepartamentoEntity(final DepartmentEntity departmentEntity) {
+        this.departmentEntity = getDefaultIfNull(departmentEntity, new DepartmentEntity());
     }
 
     public String getNombre() {

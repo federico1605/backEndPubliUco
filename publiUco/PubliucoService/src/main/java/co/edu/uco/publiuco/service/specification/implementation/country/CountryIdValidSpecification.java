@@ -1,26 +1,26 @@
-package co.edu.uco.publiuco.service.specification.implementation.pais;
+package co.edu.uco.publiuco.service.specification.implementation.country;
 
 import co.edu.uco.publiuco.crosscutting.exception.ServicePubliUcoCustomException;
 import co.edu.uco.publiuco.crosscutting.utils.UtilObject;
 import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
-import co.edu.uco.publiuco.service.domain.PaisDomain;
+import co.edu.uco.publiuco.service.domain.CountryDomain;
 import co.edu.uco.publiuco.service.specification.CompositeSpecification;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
 @Component
-public class PaisIdValidSpecification extends CompositeSpecification<PaisDomain> {
+public class CountryIdValidSpecification extends CompositeSpecification<CountryDomain> {
     @Override
-    public boolean isSatisfyBy(PaisDomain paisDomain) {
-        return isValidId(paisDomain);
+    public boolean isSatisfyBy(CountryDomain countryDomain) {
+        return isValidId(countryDomain);
     }
 
-    private boolean isValidId(PaisDomain paisDomain) {
-        if (UtilObject.isNull(paisDomain.getCodigo())) {
+    private boolean isValidId(CountryDomain countryDomain) {
+        if (UtilObject.isNull(countryDomain.getCodigo())) {
             throw ServicePubliUcoCustomException.createUserException("El codigo no puede ser nulo");
         }
-        if (UtilUUID.getUUIDAsString(paisDomain.getCodigo()).length() != 36|| Objects.equals(paisDomain.getCodigo().toString(), UtilUUID.DEFAULT_UUID_AS_STRING)) {
+        if (UtilUUID.getUUIDAsString(countryDomain.getCodigo()).length() != 36|| Objects.equals(countryDomain.getCodigo().toString(), UtilUUID.DEFAULT_UUID_AS_STRING)) {
             throw ServicePubliUcoCustomException.createUserException("Invalid budget Id");
         }
         return true;

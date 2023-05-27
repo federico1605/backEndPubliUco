@@ -2,48 +2,48 @@ package co.edu.uco.publiuco.service.domain;
 
 import co.edu.uco.publiuco.crosscutting.utils.UtilText;
 import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
-import co.edu.uco.publiuco.dto.PaisDTO;
+import co.edu.uco.publiuco.dto.CountryDTO;
 
 import java.util.UUID;
 
-public class DepartamentoDomain {
+public class DepartmentDomain {
     private UUID codigo;
-    private PaisDTO paisDto;
+    private CountryDTO countryDto;
     private String nombre;
 
-    public DepartamentoDomain(UUID codigo, PaisDTO paisDto, String nombre) {
+    public DepartmentDomain(UUID codigo, CountryDTO countryDto, String nombre) {
         setCodigo(codigo);
-        setPaisDto(paisDto);
+        setPaisDto(countryDto);
         setNombre(nombre);
     }
 
-    public DepartamentoDomain() {
+    public DepartmentDomain() {
         setCodigo(UtilUUID.getStringAsUUID());
-        setPaisDto(new PaisDTO());
+        setPaisDto(new CountryDTO());
         setNombre(UtilText.EMPTY);
     }
 
-    private UUID getCodigo() {
+    public UUID getCodigo() {
         return codigo;
     }
 
-    public PaisDTO getPaisDto() {
-        return paisDto;
+    public CountryDTO getPaisDto() {
+        return countryDto;
     }
 
-    private void setPaisDto(PaisDTO paisDto) {
-        this.paisDto = paisDto;
+    public void setPaisDto(CountryDTO countryDto) {
+        this.countryDto = countryDto;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    private void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    private void setCodigo(UUID codigo) {
+    public void setCodigo(UUID codigo) {
         this.codigo = codigo;
     }
 }

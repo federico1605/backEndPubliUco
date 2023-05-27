@@ -7,10 +7,10 @@ import java.util.UUID;
 
 public class CiudadDomain {
     private UUID codigo;
-    private DepartamentoDomain departamento;
+    private DepartmentDomain departamento;
     private String ciudad;
 
-    public CiudadDomain(UUID codigo, DepartamentoDomain departamento, String ciudad) {
+    public CiudadDomain(UUID codigo, DepartmentDomain departamento, String ciudad) {
         setCodigo(codigo);
         setDepartamento(departamento);
         setCiudad(ciudad);
@@ -19,10 +19,10 @@ public class CiudadDomain {
     public CiudadDomain() {
         setCiudad(UtilText.EMPTY);
         setCodigo(UtilUUID.getStringAsUUID());
-        setDepartamento(new DepartamentoDomain());
+        setDepartamento(new DepartmentDomain());
     }
 
-    public DepartamentoDomain getDepartamento() {
+    public DepartmentDomain getDepartamento() {
         return departamento;
     }
 
@@ -38,7 +38,7 @@ public class CiudadDomain {
         this.codigo = codigo;
     }
 
-    public void setDepartamento(DepartamentoDomain departamento) {
+    public void setDepartamento(DepartmentDomain departamento) {
         this.departamento = departamento;
     }
 

@@ -1,33 +1,29 @@
 package co.edu.uco.publiuco.dto;
 
+import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
+
 import java.util.UUID;
 
-import static co.edu.uco.publiuco.crosscutting.utils.UtilText.EMPTY;
-import  co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
-import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getDefaultIfNull;
+import static co.edu.uco.publiuco.crosscutting.utils.UtilText.EMPTY;
+import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 
-public class DepartamentoDTO {
-
+public class CityDTO {
     private UUID codigo;
-    private PaisDTO pais;
+    private DepartmentDTO departamento;
     private String nombre;
 
-    public DepartamentoDTO(final UUID codigo,final PaisDTO paisDto,final String nombre) {
+    public CityDTO(final UUID codigo, final DepartmentDTO departamento, final String nombre) {
         setCodigo(codigo);
-        setPaisDto(paisDto);
         setNombre(nombre);
+        setDepartamento(departamento);
     }
 
-    public DepartamentoDTO() {
+    public CityDTO() {
         setCodigo(UtilUUID.getStringAsUUID());
-        setPaisDto(PaisDTO.create());
+        setDepartamento(DepartmentDTO.create());
         setNombre(EMPTY);
-    }
-
-    public static final DepartamentoDTO create() {
-        return new DepartamentoDTO();
     }
 
     public UUID getCodigo() {
@@ -38,15 +34,15 @@ public class DepartamentoDTO {
         this.codigo = codigo == null ? UtilUUID.getNewUUID() : UtilUUID.getDefaultUUID(codigo);
     }
 
-    public PaisDTO getPaisDto() {
-        if (isNull(pais)) {
-            setPaisDto(PaisDTO.create());
+    public DepartmentDTO getDepartamento() {
+        if (isNull(departamento)) {
+            setDepartamento(DepartmentDTO.create());
         }
-        return pais;
+        return departamento;
     }
 
-    public void setPaisDto(PaisDTO paisDto) {
-        this.pais = getDefaultIfNull(paisDto, new PaisDTO());
+    public void setDepartamento(DepartmentDTO departamento) {
+        this.departamento = getDefaultIfNull(departamento, new DepartmentDTO(departamento.getCodigo(),departamento.getPaisDto(),departamento.getNombre()));
     }
 
     public String getNombre() {
