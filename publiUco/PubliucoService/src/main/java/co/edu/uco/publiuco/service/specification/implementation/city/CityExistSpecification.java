@@ -23,16 +23,16 @@ public class CityExistSpecification extends CompositeSpecification<CityDomain> {
 
     private boolean cityExist(CityDomain cityDomain){
         try{
-//            Revisar el porque no usa el jpa sin el findById with wrapping
-            Optional<CityEntity>response = cityRepository.findCityByDepartment(cityDomain.getId().toString());
+            Optional<CityEntity>response = cityRepository.findCityByDepartment(cityDomain.getId().toString(),
+                    cityDomain.getDepartament().getId().toString());
             if(response.isEmpty()){
-                throw ServicePubliUcoCustomException.createUserException("El pais no existe");
+                throw ServicePubliUcoCustomException.createUserException("La cuidad ya existe");
             }
             return true;
         }catch (ServicePubliUcoCustomException servicePubliUcoCustomException) {
             throw servicePubliUcoCustomException;
         }catch (Exception e){
-            throw ServicePubliUcoCustomException.create("Error consiguiendo el Pais", e.getMessage());
+            throw ServicePubliUcoCustomException.create("Error consiguiendo la informacion de Cuidad", e.getMessage());
 
         }
     }
