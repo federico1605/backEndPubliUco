@@ -2,9 +2,10 @@ package co.edu.uco.publiuco.service.specification.implementation.city;
 
 import co.edu.uco.publiuco.crosscutting.exception.ServicePubliUcoCustomException;
 import co.edu.uco.publiuco.service.domain.CityDomain;
-import co.edu.uco.publiuco.service.domain.DepartmentDomain;
 import co.edu.uco.publiuco.service.specification.CompositeSpecification;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CityNameValidSpecification extends CompositeSpecification<CityDomain> {
 
     private static final Integer COUNTCHARACTER = 3;

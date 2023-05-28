@@ -47,7 +47,7 @@ public class CityEntity {
         this.id = getDefaultUUID(id);
     }
 
-    public DepartmentEntity getDepartamentEntity() {
+    public DepartmentEntity getDepartmentEntity() {
         if (isNull(departmentEntity)) {
             setDepartamentEntity(new DepartmentEntity());
         }

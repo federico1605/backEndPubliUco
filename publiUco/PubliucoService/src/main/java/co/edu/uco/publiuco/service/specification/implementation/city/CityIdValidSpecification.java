@@ -4,11 +4,12 @@ import co.edu.uco.publiuco.crosscutting.exception.ServicePubliUcoCustomException
 import co.edu.uco.publiuco.crosscutting.utils.UtilObject;
 import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
 import co.edu.uco.publiuco.service.domain.CityDomain;
-import co.edu.uco.publiuco.service.domain.DepartmentDomain;
 import co.edu.uco.publiuco.service.specification.CompositeSpecification;
+import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
+@Component
 public class CityIdValidSpecification extends CompositeSpecification<CityDomain> {
     @Override
     public boolean isSatisfyBy(CityDomain cityDomain) {

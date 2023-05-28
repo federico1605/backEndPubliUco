@@ -8,8 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CountryNameValidSpecification extends CompositeSpecification<CountryDomain> {
-
-    @Autowired
     private CountryRepository countryRepository;
 
     @Override

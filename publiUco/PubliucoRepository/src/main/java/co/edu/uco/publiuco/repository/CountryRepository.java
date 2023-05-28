@@ -11,7 +11,7 @@ import java.util.UUID;
 @Repository
 public interface CountryRepository extends JpaRepository<CountryEntity, UUID> {
 
-    @Query(value ="SELECT id FROM public.Country WHERE name = ?1", nativeQuery = true)
+    @Query(value ="SELECT codigo FROM public.pais WHERE name = ?1", nativeQuery = true)
     Optional<CountryEntity> findCountryById(String idCountry);
 
 }
