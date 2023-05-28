@@ -11,6 +11,6 @@ import java.util.UUID;
 @Repository
 public interface DepartmentRepository extends JpaRepository<DepartmentEntity, UUID> {
 
-    @Query(value = "SELECT * FROM public.departamento WHERE nombre = ?1 AND pais = ?2")
+    @Query(value = "SELECT * FROM public.departamento WHERE nombre = ?1 AND pais = ?2;", nativeQuery = true)
     Optional<DepartmentEntity> findDepartmentByIDAndCountry(String department, String country);
 }

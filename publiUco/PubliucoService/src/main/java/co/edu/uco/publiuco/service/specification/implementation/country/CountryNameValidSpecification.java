@@ -1,5 +1,6 @@
 package co.edu.uco.publiuco.service.specification.implementation.country;
 
+import co.edu.uco.publiuco.repository.CountryRepository;
 import co.edu.uco.publiuco.crosscutting.exception.ServicePubliUcoCustomException;
 import co.edu.uco.publiuco.service.domain.CountryDomain;
 import co.edu.uco.publiuco.service.specification.CompositeSpecification;
@@ -7,6 +8,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CountryNameValidSpecification extends CompositeSpecification<CountryDomain> {
+
+    @Autowired
+    private CountryRepository countryRepository;
 
     @Override
     public boolean isSatisfyBy(CountryDomain countryDomain) {

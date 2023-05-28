@@ -34,15 +34,15 @@ public class CityDTO {
         this.id = id == null ? UtilUUID.getNewUUID() : UtilUUID.getDefaultUUID(id);
     }
 
-    public DepartmentDTO getDepartament() {
+    public DepartmentDTO getDepartment() {
         if (isNull(departament)) {
             setDepartament(DepartmentDTO.create());
         }
-        return departament;
+        return department;
     }
 
-    public void setDepartament(DepartmentDTO departament) {
-        this.departament = getDefaultIfNull(departament, new DepartmentDTO(departament.getId(),departament.getCountryDto(),departament.getName()));
+    public void setDepartment(DepartmentDTO department) {
+        this.department = getDefaultIfNull(department, new DepartmentDTO(department.getCodigo(), department.getPaisDto(), department.getName()));
     }
 
     public String getName() {

@@ -6,11 +6,9 @@ import co.edu.uco.publiuco.repository.CityRepository;
 import co.edu.uco.publiuco.service.domain.CityDomain;
 import co.edu.uco.publiuco.service.specification.CompositeSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-@Component
 public class CityExistSpecification extends CompositeSpecification<CityDomain> {
 
     @Autowired
@@ -18,23 +16,14 @@ public class CityExistSpecification extends CompositeSpecification<CityDomain> {
 
     @Override
     public boolean isSatisfyBy(CityDomain cityDomain) {
-        return cityExist(cityDomain);
-    }
-
-    private boolean cityExist(CityDomain cityDomain){
-        try{
-//            Revisar el porque no usa el jpa sin el findById with wrapping
-            Optional<CityEntity>response = cityRepository.findCityByDepartment(cityDomain.getId().toString());
-            if(response.isEmpty()){
-                throw ServicePubliUcoCustomException.createUserException("El pais no existe");
+        try {
+            Optional<CityEntity> response = cityRepository.findCityByDepartment(cityDomain.getDepartament().getId().toString());
+            if (response.isEmpty()) {
+                throw ServicePubliUcoCustomException.createUserException("El pais ya esta registrado");
             }
-            return true;
-        }catch (ServicePubliUcoCustomException servicePubliUcoCustomException) {
-            throw servicePubliUcoCustomException;
-        }catch (Exception e){
-            throw ServicePubliUcoCustomException.create("Error consiguiendo el Pais", e.getMessage());
-
+        } catch (ServicePubliUcoCustomException exception) {
+            throw ServicePubliUcoCustomException.createUserException("Error al obtener la ciudad "+exception.getMessage());
         }
+        return true;
     }
-
 }

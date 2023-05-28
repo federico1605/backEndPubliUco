@@ -23,7 +23,7 @@ public class DepartmentDomain {
         setName(UtilText.EMPTY);
     }
 
-    public UUID getCodigo() {
+    public UUID getId() {
         return id;
     }
 

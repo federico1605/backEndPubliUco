@@ -1,5 +1,6 @@
 package co.edu.uco.publiuco.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -12,13 +13,14 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
 
 @Entity
-@Table(name = "Country")
+@Table(name = "pais")
 public class CountryEntity {
 
     @Id
+    @Column(name = "codigo")
     private UUID id;
+    @Column(name = "nombre")
     private String name;
-
     public CountryEntity(UUID id, String name) {
         this.id = id;
         this.name = name;

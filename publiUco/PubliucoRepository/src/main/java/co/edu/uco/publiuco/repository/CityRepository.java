@@ -13,7 +13,7 @@ import java.util.UUID;
 @Repository
 public interface CityRepository extends JpaRepository<CityEntity, UUID> {
 
-    @Query(value="SELECT * FROM public.City b WHERE b.idDepartment = ?1 ", nativeQuery = true)
+    @Query(value="SELECT * FROM public.City b WHERE b.departamento = ?1 ", nativeQuery = true)
     Optional<CityEntity> findCityByDepartment(String departmsentId);
 
     @Modifying

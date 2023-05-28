@@ -12,14 +12,16 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
 
 @Entity
-@Table(name = "City")
+@Table(name = "ciudad")
 public class CityEntity {
 
     @Id
+    @Column(name = "codigo")
     private UUID id;
     @ManyToOne
-    @JoinColumn(name = "Departament")
+    @JoinColumn(name = "departamento")
     private DepartmentEntity departmentEntity;
+    @Column(name = "nombre")
     private String name;
 
     public CityEntity(UUID id, DepartmentEntity departmentEntity, String name) {

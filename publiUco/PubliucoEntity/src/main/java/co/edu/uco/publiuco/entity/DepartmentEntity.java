@@ -12,14 +12,16 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
 
 @Entity
-@Table(name = "Departament")
+@Table(name = "departamento")
 public class DepartmentEntity {
 
     @Id
+    @Column(name = "codigo")
     private UUID id;
     @ManyToOne
-    @JoinColumn(name = "Country")
+    @JoinColumn(name = "pais")
     private CountryEntity countryEntity;
+    @Column(name = "nombre")
     private String name;
 
     public DepartmentEntity(UUID id, CountryEntity countryEntity, String name) {
@@ -63,7 +65,7 @@ public class DepartmentEntity {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = applyTrim(name);
+    public void setName(String nombre) {
+        this.name = applyTrim(nombre);
     }
 }
