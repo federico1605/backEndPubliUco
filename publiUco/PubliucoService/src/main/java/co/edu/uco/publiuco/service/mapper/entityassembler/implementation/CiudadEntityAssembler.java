@@ -1,13 +1,13 @@
 package co.edu.uco.publiuco.service.mapper.entityassembler.implementation;
 
-import co.edu.uco.publiuco.entity.CiudadEntity;
-import co.edu.uco.publiuco.service.domain.CiudadDomain;
+import co.edu.uco.publiuco.entity.CityEntity;
+import co.edu.uco.publiuco.service.domain.CityDomain;
 import co.edu.uco.publiuco.service.mapper.entityassembler.EntityAssembler;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CiudadEntityAssembler implements EntityAssembler<CiudadEntity, CiudadDomain> {
+public class CiudadEntityAssembler implements EntityAssembler<CityEntity, CityDomain> {
 
     public CiudadEntityAssembler() {
         super();
@@ -17,12 +17,12 @@ public class CiudadEntityAssembler implements EntityAssembler<CiudadEntity, Ciud
     private ModelMapper modelMapper;
 
     @Override
-    public CiudadDomain assembleDomain(CiudadEntity entity) {
-        return modelMapper.map(entity, CiudadDomain.class);
+    public CityDomain assembleDomain(CityEntity entity) {
+        return modelMapper.map(entity, CityDomain.class);
     }
 
     @Override
-    public CiudadEntity assembleEntity(CiudadDomain domain) {
-        return modelMapper.map(domain, CiudadEntity.class);
+    public CityEntity assembleEntity(CityDomain domain) {
+        return modelMapper.map(domain, CityEntity.class);
     }
 }

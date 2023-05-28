@@ -12,11 +12,11 @@ import java.util.Objects;
 public class CountryIsNotDefaultSpecification extends CompositeSpecification<CountryDomain> {
 
     @Override
-    public boolean isSatisfyBy(CountryDomain object) {
-        return false;
+    public boolean isSatisfyBy(CountryDomain countryDomain) {
+        return isNotDefault(countryDomain);
     }
     private boolean isNotDefault(CountryDomain countryDomain){
-        if (Objects.equals(countryDomain.getCodigo().toString(), UtilUUID.DEFAULT_UUID_AS_STRING) && "" .equals(countryDomain.getNombre())) {
+        if (Objects.equals(countryDomain.getId().toString(), UtilUUID.DEFAULT_UUID_AS_STRING) && "" .equals(countryDomain.getName())) {
             throw ServicePubliUcoCustomException.createUserException("No se encontro info en el pais dado");
         }else {
             return true;

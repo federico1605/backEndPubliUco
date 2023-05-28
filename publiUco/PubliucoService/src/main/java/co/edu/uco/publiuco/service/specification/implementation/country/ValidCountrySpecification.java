@@ -7,22 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class ValidCountrySpecification extends CompositeSpecification<CountryDomain> {
     @Autowired
-    CountryExistSpecification countryExistSpecification;
+    CountryExistSpecification countryExist;
 
     @Autowired
-    CountryIdValidSpecification countryIdValidSpecification;
+    CountryIdValidSpecification countryIdValid;
 
     @Autowired
-    CountryIsNotDefaultSpecification countryIsNotDefaultSpecification;
+    CountryIsNotDefaultSpecification countryIsNotDefault;
 
     @Autowired
-    CountryNameValidSpecification countryNameValidSpecification;
+    CountryNameValidSpecification countryNameValid;
 
     @Override
     public boolean isSatisfyBy(CountryDomain countryDomain) {
         try {
-            return countryIsNotDefaultSpecification.and(countryIdValidSpecification)
-                    .and(countryExistSpecification).and(countryNameValidSpecification).isSatisfyBy(countryDomain);
+            return countryIsNotDefault.and(countryIdValid)
+                    .and(countryExist).and(countryNameValid).isSatisfyBy(countryDomain);
         }catch (ServicePubliUcoCustomException e){
             throw e;
         }

@@ -4,22 +4,23 @@ import java.util.UUID;
 
 public class CountryDomain {
 
-    private UUID codigo;
-    private String nombre;
+    private UUID id;
+    private String name;
 
-    public UUID getCodigo() {
-        return codigo;
+    public UUID getId() {
+        return id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCodigo(UUID codigo) {
-        this.codigo = codigo;
+    public void setId(UUID codigo) {
+        this.id = id;
     }
+
 }

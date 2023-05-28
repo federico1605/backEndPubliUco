@@ -7,43 +7,43 @@ import co.edu.uco.publiuco.dto.CountryDTO;
 import java.util.UUID;
 
 public class DepartmentDomain {
-    private UUID codigo;
+    private UUID id;
     private CountryDTO countryDto;
-    private String nombre;
+    private String name;
 
-    public DepartmentDomain(UUID codigo, CountryDTO countryDto, String nombre) {
-        setCodigo(codigo);
-        setPaisDto(countryDto);
-        setNombre(nombre);
+    public DepartmentDomain(UUID id, CountryDTO countryDto, String name) {
+        setId(id);
+        setCountryDto(countryDto);
+        setName(name);
     }
 
     public DepartmentDomain() {
-        setCodigo(UtilUUID.getStringAsUUID());
-        setPaisDto(new CountryDTO());
-        setNombre(UtilText.EMPTY);
+        setId(UtilUUID.getStringAsUUID());
+        setCountryDto(new CountryDTO());
+        setName(UtilText.EMPTY);
     }
 
     public UUID getCodigo() {
-        return codigo;
+        return id;
     }
 
-    public CountryDTO getPaisDto() {
+    public CountryDTO getCountryDto() {
         return countryDto;
     }
 
-    public void setPaisDto(CountryDTO countryDto) {
+    public void setCountryDto(CountryDTO countryDto) {
         this.countryDto = countryDto;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCodigo(UUID codigo) {
-        this.codigo = codigo;
+    public void setId(UUID id) {
+        this.id = id;
     }
 }

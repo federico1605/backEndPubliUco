@@ -11,36 +11,36 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 
 public class CountryDTO {
 
-    private UUID codigo;
-    private String nombre;
+    private UUID id;
+    private String name;
 
-    public CountryDTO(final UUID codigo, final String nombre) {
-        setCodigo(codigo);
-        setNombre(nombre);
+    public CountryDTO(final UUID id, final String name) {
+        setId(id);
+        setName(name);
     }
 
     public CountryDTO() {
-        setCodigo(UtilUUID.getStringAsUUID());
-        setNombre(EMPTY);
+        setId(UtilUUID.getStringAsUUID());
+        setName(EMPTY);
     }
 
     public static final CountryDTO create(){
         return new CountryDTO();
     }
 
-    public UUID getCodigo() {
-        return codigo;
+    public UUID getId() {
+        return id;
     }
 
-    public void setCodigo(UUID codigo) {
-        this.codigo = codigo == null ? getNewUUID() : getDefaultUUID(codigo);
+    public void setId(UUID id) {
+        this.id = id == null ? getNewUUID() : getDefaultUUID(id);
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = applyTrim(nombre);
+    public void setName(String name) {
+        this.name = applyTrim(name);
     }
 }

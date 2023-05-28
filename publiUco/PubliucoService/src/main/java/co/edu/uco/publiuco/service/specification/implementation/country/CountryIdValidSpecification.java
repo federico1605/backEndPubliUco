@@ -17,10 +17,10 @@ public class CountryIdValidSpecification extends CompositeSpecification<CountryD
     }
 
     private boolean isValidId(CountryDomain countryDomain) {
-        if (UtilObject.isNull(countryDomain.getCodigo())) {
+        if (UtilObject.isNull(countryDomain.getId())) {
             throw ServicePubliUcoCustomException.createUserException("El codigo no puede ser nulo");
         }
-        if (UtilUUID.getUUIDAsString(countryDomain.getCodigo()).length() != 36|| Objects.equals(countryDomain.getCodigo().toString(), UtilUUID.DEFAULT_UUID_AS_STRING)) {
+        if (UtilUUID.getUUIDAsString(countryDomain.getId()).length() != 36|| Objects.equals(countryDomain.getId().toString(), UtilUUID.DEFAULT_UUID_AS_STRING)) {
             throw ServicePubliUcoCustomException.createUserException("Invalid budget Id");
         }
         return true;

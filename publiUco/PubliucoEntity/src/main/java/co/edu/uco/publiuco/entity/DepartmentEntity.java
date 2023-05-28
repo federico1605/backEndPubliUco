@@ -12,58 +12,58 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
 
 @Entity
-@Table(name = "departamento")
+@Table(name = "Departament")
 public class DepartmentEntity {
 
     @Id
-    private UUID codigo;
+    private UUID id;
     @ManyToOne
-    @JoinColumn(name = "pais")
+    @JoinColumn(name = "Country")
     private CountryEntity countryEntity;
-    private String nombre;
+    private String name;
 
-    public DepartmentEntity(UUID codigo, CountryEntity countryEntity, String nombre) {
-        this.codigo = codigo;
+    public DepartmentEntity(UUID id, CountryEntity countryEntity, String name) {
+        this.id = id;
         this.countryEntity = countryEntity;
-        this.nombre = nombre;
+        this.name = name;
     }
 
     public DepartmentEntity() {
-        setCodigo(getStringAsUUID());
-        setPaisEntity(new CountryEntity());
-        setNombre(EMPTY);
+        setId(getStringAsUUID());
+        setCountryEntity(new CountryEntity());
+        setName(EMPTY);
     }
 
-    public UUID getCodigo() {
-        if (isNull(codigo)){
-            setCodigo(getStringAsUUID());
+    public UUID getId() {
+        if (isNull(id)){
+            setId(getStringAsUUID());
         }
-        return codigo;
+        return id;
     }
 
-    public void setCodigo(final UUID codigo) {
-        this.codigo = getDefaultUUID(codigo);
+    public void setId(final UUID id) {
+        this.id = getDefaultUUID(id);
     }
 
-    public CountryEntity getPaisEntity() {
+    public CountryEntity getCountryEntity() {
         if (isNull(countryEntity)) {
-            setPaisEntity(new CountryEntity());
+            setCountryEntity(new CountryEntity());
         }
         return countryEntity;
     }
 
-    public void setPaisEntity(final CountryEntity countryEntity) {
+    public void setCountryEntity(final CountryEntity countryEntity) {
         this.countryEntity = getDefaultIfNull(countryEntity, new CountryEntity());
     }
 
-    public String getNombre() {
-        if (isNull(nombre)) {
-            setNombre(EMPTY);
+    public String getName() {
+        if (isNull(name)) {
+            setName(EMPTY);
         }
-        return nombre;
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = applyTrim(nombre);
+    public void setName(String name) {
+        this.name = applyTrim(name);
     }
 }

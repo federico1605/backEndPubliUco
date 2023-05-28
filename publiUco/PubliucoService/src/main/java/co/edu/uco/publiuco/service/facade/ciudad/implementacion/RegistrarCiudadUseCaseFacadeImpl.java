@@ -1,7 +1,7 @@
 package co.edu.uco.publiuco.service.facade.ciudad.implementacion;
 
 import co.edu.uco.publiuco.dto.CityDTO;
-import co.edu.uco.publiuco.service.domain.CiudadDomain;
+import co.edu.uco.publiuco.service.domain.CityDomain;
 import co.edu.uco.publiuco.service.facade.ciudad.RegistrarCiudadUseCaseFacade;
 import co.edu.uco.publiuco.service.mapper.dtoassambler.DTOAssembler;
 import co.edu.uco.publiuco.service.usecase.ciudad.RegistrarCiudadUseCase;
@@ -17,7 +17,7 @@ public class RegistrarCiudadUseCaseFacadeImpl implements RegistrarCiudadUseCaseF
     private RegistrarCiudadUseCase registrarCiudadUseCase;
 
     @Autowired
-    private DTOAssembler<CityDTO,CiudadDomain> dtoAssembler;
+    private DTOAssembler<CityDTO, CityDomain> dtoAssembler;
 
     @Override
     public void execute(CityDTO dto) {

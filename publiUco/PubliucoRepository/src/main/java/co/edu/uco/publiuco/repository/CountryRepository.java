@@ -9,8 +9,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface PaisRepository extends JpaRepository<CountryEntity, UUID> {
+public interface CountryRepository extends JpaRepository<CountryEntity, UUID> {
 
-    @Query(value ="SELECT codigo FROM public.pais WHERE nombre = ?1", nativeQuery = true)
-    Optional<CountryEntity> findPaisById(String pais);
+    @Query(value ="SELECT id FROM public.Country WHERE name = ?1", nativeQuery = true)
+    Optional<CountryEntity> findCountryById(String idCountry);
+
 }

@@ -10,53 +10,53 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 
 public class DepartmentDTO {
 
-    private UUID codigo;
-    private CountryDTO pais;
-    private String nombre;
+    private UUID id;
+    private CountryDTO country;
+    private String name;
 
-    public DepartmentDTO(final UUID codigo, final CountryDTO countryDto, final String nombre) {
-        setCodigo(codigo);
+    public DepartmentDTO(final UUID id, final CountryDTO countryDto, final String name) {
+        setId(id);
         setCountryDto(countryDto);
-        setNombre(nombre);
+        setName(name);
     }
 
     public DepartmentDTO() {
-        setCodigo(UtilUUID.getStringAsUUID());
+        setId(UtilUUID.getStringAsUUID());
         setCountryDto(CountryDTO.create());
-        setNombre(EMPTY);
+        setName(EMPTY);
     }
 
     public static final DepartmentDTO create() {
         return new DepartmentDTO();
     }
 
-    public UUID getCodigo() {
-        return codigo;
+    public UUID getId() {
+        return id;
     }
 
-    public void setCodigo(UUID codigo) {
-        this.codigo = codigo == null ? UtilUUID.getNewUUID() : UtilUUID.getDefaultUUID(codigo);
+    public void setId(UUID id) {
+        this.id = id == null ? UtilUUID.getNewUUID() : UtilUUID.getDefaultUUID(id);
     }
 
-    public CountryDTO getPaisDto() {
-        if (isNull(pais)) {
+    public CountryDTO getCountryDto() {
+        if (isNull(country)) {
             setCountryDto(CountryDTO.create());
         }
-        return pais;
+        return country;
     }
 
     public void setCountryDto(CountryDTO countryDto) {
-        this.pais = getDefaultIfNull(countryDto, new CountryDTO());
+        this.country = getDefaultIfNull(countryDto, new CountryDTO());
     }
 
-    public String getNombre() {
-        if (isNull(nombre)) {
-            setNombre(EMPTY);
+    public String getName() {
+        if (isNull(name)) {
+            setName(EMPTY);
         }
-        return nombre;
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = applyTrim(nombre);
+    public void setName(String name) {
+        this.name = applyTrim(name);
     }
 }

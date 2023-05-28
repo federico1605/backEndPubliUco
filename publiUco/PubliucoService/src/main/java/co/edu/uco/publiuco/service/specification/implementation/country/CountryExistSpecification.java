@@ -2,7 +2,7 @@ package co.edu.uco.publiuco.service.specification.implementation.country;
 
 import co.edu.uco.publiuco.crosscutting.exception.ServicePubliUcoCustomException;
 import co.edu.uco.publiuco.entity.CountryEntity;
-import co.edu.uco.publiuco.repository.PaisRepository;
+import co.edu.uco.publiuco.repository.CountryRepository;
 import co.edu.uco.publiuco.service.domain.CountryDomain;
 import co.edu.uco.publiuco.service.specification.CompositeSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.Optional;
 public class CountryExistSpecification extends CompositeSpecification<CountryDomain> {
 
     @Autowired
-    private PaisRepository paisRepository;
+    private CountryRepository countryRepository;
 
     @Override
     public boolean isSatisfyBy(CountryDomain countryDomain) {
@@ -23,7 +23,7 @@ public class CountryExistSpecification extends CompositeSpecification<CountryDom
 
     private boolean countryExist(CountryDomain countryDomain){
         try{
-            Optional<CountryEntity>response = paisRepository.findPaisById(countryDomain.getCodigo().toString());
+            Optional<CountryEntity>response = countryRepository.findCountryById(countryDomain.getId().toString());
             if(response.isEmpty()){
                 throw ServicePubliUcoCustomException.createUserException("El pais no existe");
             }

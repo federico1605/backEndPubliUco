@@ -12,42 +12,42 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
 
 @Entity
-@Table(name = "pais")
+@Table(name = "Country")
 public class CountryEntity {
 
     @Id
-    private UUID codigo;
-    private String nombre;
+    private UUID id;
+    private String name;
 
-    public CountryEntity(UUID codigo, String nombre) {
-        this.codigo = codigo;
-        this.nombre = nombre;
+    public CountryEntity(UUID id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public CountryEntity() {
-        setCodigo(getStringAsUUID());
-        setNombre(EMPTY);
+        setId(getStringAsUUID());
+        setName(EMPTY);
     }
 
-    public UUID getCodigo() {
-        if (isNull(codigo)){
-            setCodigo(getStringAsUUID());
+    public UUID getId() {
+        if (isNull(id)){
+            setId(getStringAsUUID());
         }
-        return codigo;
+        return id;
     }
 
-    public void setCodigo(final UUID codigo) {
-        this.codigo = getDefaultUUID(codigo);
+    public void setId(final UUID id) {
+        this.id = getDefaultUUID(id);
     }
 
-    public String getNombre() {
-        if (isNull(nombre)) {
-            setNombre(EMPTY);
+    public String getName() {
+        if (isNull(name)) {
+            setName(EMPTY);
         }
-        return nombre;
+        return name;
     }
 
-    public void setNombre(final String nombre) {
-        this.nombre = applyTrim(nombre);
+    public void setName(final String name) {
+        this.name = applyTrim(name);
     }
 }

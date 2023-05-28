@@ -10,49 +10,49 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 
 public class CityDTO {
-    private UUID codigo;
-    private DepartmentDTO departamento;
-    private String nombre;
+    private UUID id;
+    private DepartmentDTO departament;
+    private String name;
 
-    public CityDTO(final UUID codigo, final DepartmentDTO departamento, final String nombre) {
-        setCodigo(codigo);
-        setNombre(nombre);
-        setDepartamento(departamento);
+    public CityDTO(final UUID codigo, final DepartmentDTO departament, final String name) {
+        setId(codigo);
+        setName(name);
+        setDepartament(departament);
     }
 
     public CityDTO() {
-        setCodigo(UtilUUID.getStringAsUUID());
-        setDepartamento(DepartmentDTO.create());
-        setNombre(EMPTY);
+        setId(UtilUUID.getStringAsUUID());
+        setDepartament(DepartmentDTO.create());
+        setName(EMPTY);
     }
 
-    public UUID getCodigo() {
-        return codigo;
+    public UUID getId() {
+        return id;
     }
 
-    public void setCodigo(UUID codigo) {
-        this.codigo = codigo == null ? UtilUUID.getNewUUID() : UtilUUID.getDefaultUUID(codigo);
+    public void setId(UUID id) {
+        this.id = id == null ? UtilUUID.getNewUUID() : UtilUUID.getDefaultUUID(id);
     }
 
-    public DepartmentDTO getDepartamento() {
-        if (isNull(departamento)) {
-            setDepartamento(DepartmentDTO.create());
+    public DepartmentDTO getDepartament() {
+        if (isNull(departament)) {
+            setDepartament(DepartmentDTO.create());
         }
-        return departamento;
+        return departament;
     }
 
-    public void setDepartamento(DepartmentDTO departamento) {
-        this.departamento = getDefaultIfNull(departamento, new DepartmentDTO(departamento.getCodigo(),departamento.getPaisDto(),departamento.getNombre()));
+    public void setDepartament(DepartmentDTO departament) {
+        this.departament = getDefaultIfNull(departament, new DepartmentDTO(departament.getId(),departament.getCountryDto(),departament.getName()));
     }
 
-    public String getNombre() {
-        if (isNull(nombre)) {
-            setNombre(EMPTY);
+    public String getName() {
+        if (isNull(name)) {
+            setName(EMPTY);
         }
-        return nombre;
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = applyTrim(nombre);
+    public void setName(String name) {
+        this.name = applyTrim(name);
     }
 }

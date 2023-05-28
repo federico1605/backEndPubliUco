@@ -2,13 +2,13 @@ package co.edu.uco.publiuco.service.mapper.dtoassambler.implementationn;
 
 
 import co.edu.uco.publiuco.dto.CityDTO;
-import co.edu.uco.publiuco.service.domain.CiudadDomain;
+import co.edu.uco.publiuco.service.domain.CityDomain;
 import co.edu.uco.publiuco.service.mapper.dtoassambler.DTOAssembler;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CiudadDTOAssembler implements DTOAssembler<CityDTO,CiudadDomain> {
+public class CiudadDTOAssembler implements DTOAssembler<CityDTO, CityDomain> {
 
     private ModelMapper modelMapper;
 
@@ -17,12 +17,12 @@ public class CiudadDTOAssembler implements DTOAssembler<CityDTO,CiudadDomain> {
     }
 
     @Override
-    public CiudadDomain assembleDomain(CityDTO dto) {
-        return modelMapper.map(dto, CiudadDomain.class);
+    public CityDomain assembleDomain(CityDTO dto) {
+        return modelMapper.map(dto, CityDomain.class);
     }
 
     @Override
-    public CityDTO assembleDTO(CiudadDomain domain) {
+    public CityDTO assembleDTO(CityDomain domain) {
         return modelMapper.map(domain, CityDTO.class);
     }
 }

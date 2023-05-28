@@ -1,7 +1,7 @@
 package co.edu.uco.publiuco.service.usecase.ciudad.implementation;
 
-import co.edu.uco.publiuco.repository.CiudadRepository;
-import co.edu.uco.publiuco.service.domain.CiudadDomain;
+import co.edu.uco.publiuco.repository.CityRepository;
+import co.edu.uco.publiuco.service.domain.CityDomain;
 import co.edu.uco.publiuco.service.usecase.ciudad.ListarCiudadesUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,10 +13,10 @@ import java.util.Optional;
 public class ListarCiudadesUseCaseImpl implements ListarCiudadesUseCase {
 
     @Autowired
-    private CiudadRepository ciudadRepository;
+    private CityRepository cityRepository;
 
     @Override
-    public List<CiudadDomain> execute(Optional<CiudadDomain> domain) {
+    public List<CityDomain> execute(Optional<CityDomain> domain) {
         return null;
     }
 }
