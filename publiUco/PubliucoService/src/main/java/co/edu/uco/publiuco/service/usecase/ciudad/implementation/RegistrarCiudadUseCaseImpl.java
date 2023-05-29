@@ -25,10 +25,10 @@ public class RegistrarCiudadUseCaseImpl implements RegistrarCiudadUseCase {
     @Override
     public void execute(CityDomain domain) {
         try {
+            domain.setId(UtilUUID.getNewUUID());
             CityEntity entity = entityAssembler.assembleEntity(domain);
-            entity.setId(UtilUUID.getNewUUID());
             validCitySpecification.isSatisfyBy(domain);
-            cityRepository.createCityByDepartment(entity.getId().toString(),entity.getDepartmentEntity().getId().toString()
+            cityRepository.createCityByDepartment(entity.getId(),entity.getDepartmentEntity().getId()
                     ,entity.getName());
         } catch (ServicePubliUcoCustomException exception) {
             throw exception;

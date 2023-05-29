@@ -14,7 +14,7 @@ public class UtilUUID {
     }
 
     public static final UUID getDefaultUUID(final UUID value) {
-        return getDefaultIfNull(value, DEFAULT_UUID);
+        return (value == null) ? DEFAULT_UUID:value;
     }
 
     public static final UUID getNewUUID() {

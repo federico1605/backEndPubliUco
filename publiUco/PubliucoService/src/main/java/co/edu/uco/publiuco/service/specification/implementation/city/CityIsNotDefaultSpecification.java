@@ -17,7 +17,7 @@ public class CityIsNotDefaultSpecification extends CompositeSpecification<CityDo
     }
     private boolean isNotDefault(CityDomain cityDomain){
         if (Objects.equals(cityDomain.getId().toString(), UtilUUID.DEFAULT_UUID_AS_STRING) && "" .equals(cityDomain.getName())) {
-            throw ServicePubliUcoCustomException.createUserException("No se encontro info en el pais dado");
+            throw ServicePubliUcoCustomException.createUserException("No se encontro info del departamento dado");
         }else {
             return true;
         }

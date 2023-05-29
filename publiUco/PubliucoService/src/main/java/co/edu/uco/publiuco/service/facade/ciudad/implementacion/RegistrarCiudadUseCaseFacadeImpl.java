@@ -21,6 +21,7 @@ public class RegistrarCiudadUseCaseFacadeImpl implements RegistrarCiudadUseCaseF
 
     @Override
     public void execute(CityDTO dto) {
-        registrarCiudadUseCase.execute(dtoAssembler.assembleDomain(dto));
+        CityDomain cityDomain = dtoAssembler.assembleDomain(dto);
+        registrarCiudadUseCase.execute(cityDomain);
     }
 }

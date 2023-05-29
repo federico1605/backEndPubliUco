@@ -22,7 +22,7 @@ public class DepartmentExistSpecification extends CompositeSpecification<Departm
     private boolean departmentExist(DepartmentDomain departmentDomain) {
         try {
             Optional<DepartmentEntity> response = departmentRepository.findDepartmentByIDAndCountry(departmentDomain.getName()
-                    ,departmentDomain.getCountryDto().getId().toString());
+                    ,departmentDomain.getCountryDomain().getId().toString());
             if (response.isEmpty()) {
                 throw ServicePubliUcoCustomException.createUserException("El pais ya esta registrado");
             }

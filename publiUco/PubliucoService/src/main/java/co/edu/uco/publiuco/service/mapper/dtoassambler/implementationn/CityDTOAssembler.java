@@ -8,11 +8,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CiudadDTOAssembler implements DTOAssembler<CityDTO, CityDomain> {
+public class CityDTOAssembler implements DTOAssembler<CityDTO, CityDomain> {
 
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
-    public CiudadDTOAssembler() {
+    public CityDTOAssembler() {
         this.modelMapper = new ModelMapper();
     }
 

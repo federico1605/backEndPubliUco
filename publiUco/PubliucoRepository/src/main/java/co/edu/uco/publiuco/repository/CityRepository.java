@@ -1,7 +1,6 @@
 package co.edu.uco.publiuco.repository;
 
 import co.edu.uco.publiuco.entity.CityEntity;
-import co.edu.uco.publiuco.entity.CountryEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -13,10 +12,10 @@ import java.util.UUID;
 @Repository
 public interface CityRepository extends JpaRepository<CityEntity, UUID> {
 
-    @Query(value="SELECT * FROM public.ciudad b WHERE b.departamento = ?1", nativeQuery = true)
-    Optional<CityEntity> findCityByDepartment(String departmsentId);
+    @Query(value="SELECT * FROM public.ciudad b WHERE departamento = ?1 AND nombre = ?2", nativeQuery = true)
+    Optional<CityEntity> findCityByDepartment(UUID departmsentId, String city);
 
     @Modifying
     @Query(value="INSERT INTO public.ciudad(codigo, departamento, nombre) VALUES(?1,?2,?3)", nativeQuery = true)
-    void createCityByDepartment(String cityId, String departmentId, String name);
+    void createCityByDepartment(UUID cityId, UUID departmentId, String name);
 }

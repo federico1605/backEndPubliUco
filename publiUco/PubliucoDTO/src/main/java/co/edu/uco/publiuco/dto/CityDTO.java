@@ -14,10 +14,10 @@ public class CityDTO {
     private DepartmentDTO department;
     private String name;
 
-    public CityDTO(final UUID codigo, final DepartmentDTO departament, final String name) {
-        setId(codigo);
+    public CityDTO(final UUID id, final DepartmentDTO department, final String name) {
+        setId(id);
         setName(name);
-        setDepartment(departament);
+        setDepartment(department);
     }
 
     public CityDTO() {
@@ -35,20 +35,14 @@ public class CityDTO {
     }
 
     public DepartmentDTO getDepartment() {
-        if (isNull(department)) {
-            setDepartment(DepartmentDTO.create());
-        }
         return department;
     }
 
     public void setDepartment(DepartmentDTO department) {
-        this.department = getDefaultIfNull(department, new DepartmentDTO(department.getId(), department.getCountryDto(), department.getName()));
+        this.department = getDefaultIfNull(department, new DepartmentDTO());
     }
 
     public String getName() {
-        if (isNull(name)) {
-            setName(EMPTY);
-        }
         return name;
     }
 
