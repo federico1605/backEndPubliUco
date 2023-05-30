@@ -18,6 +18,7 @@ public class CityDTOAssembler implements DTOAssembler<CityDTO, CityDomain> {
 
     @Override
     public CityDomain assembleDomain(CityDTO dto) {
+        System.out.println();
         return modelMapper.map(dto, CityDomain.class);
     }
 

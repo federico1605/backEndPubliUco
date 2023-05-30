@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ValidDepartmentSpecification extends CompositeSpecification<DepartmentDomain> {
 
     @Autowired
-    DepartmentIDValidSpecification departmentIDValidSpecification;
+    DepartmentIdValidSpecification departmentIDValidSpecification;
 
     @Autowired
     DepartmentExistSpecification departmentExistSpecification;

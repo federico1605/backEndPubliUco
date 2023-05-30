@@ -18,6 +18,12 @@ public class CityDomain {
         setName(name);
     }
 
+    public CityDomain() {
+        setId(null);
+        setDepartment(null);
+        setName(null);
+    }
+
     public static CityDomain build(final UUID id, final DepartmentDomain departmentDomain, final String name) {
         return new CityDomain(id,departmentDomain,name);
     }
@@ -45,4 +51,5 @@ public class CityDomain {
     public void setName(final String name) {
         this.name = UtilText.getDefaultString(name);
     }
+
 }

@@ -13,6 +13,6 @@ public class AndNotSpecification<T> extends CompositeSpecification<T> {
 
     @Override
     public boolean isSatisfyBy(T candidate) {
-        return false;
+        return left.isSatisfyBy(candidate) && !right.isSatisfyBy(candidate);
     }
 }

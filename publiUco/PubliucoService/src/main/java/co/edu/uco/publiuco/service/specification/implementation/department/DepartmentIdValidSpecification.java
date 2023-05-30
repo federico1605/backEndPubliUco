@@ -8,7 +8,7 @@ import co.edu.uco.publiuco.service.specification.CompositeSpecification;
 
 import java.util.Objects;
 
-public class DepartmentIDValidSpecification extends CompositeSpecification<DepartmentDomain> {
+public class DepartmentIdValidSpecification extends CompositeSpecification<DepartmentDomain> {
     @Override
     public boolean isSatisfyBy(DepartmentDomain departmentDomain) {
         return isValidId(departmentDomain);

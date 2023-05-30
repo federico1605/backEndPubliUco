@@ -19,7 +19,13 @@ public class DepartmentDomain {
         setName(name);
     }
 
-    public static DepartmentDomain build(UUID id,CountryDomain countryDomain, String name) {
+    public DepartmentDomain() {
+        setName(null);
+        setId(null);
+        setCountryDomain(null);
+    }
+
+    public static DepartmentDomain build(UUID id, CountryDomain countryDomain, String name) {
         return new DepartmentDomain(id,countryDomain,name);
     }
 

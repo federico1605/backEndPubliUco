@@ -1,9 +1,13 @@
 package co.edu.uco.publiuco.service.mapper.entityassembler.implementation;
 
 import co.edu.uco.publiuco.entity.CityEntity;
+import co.edu.uco.publiuco.entity.CountryEntity;
+import co.edu.uco.publiuco.entity.DepartmentEntity;
 import co.edu.uco.publiuco.service.domain.CityDomain;
 import co.edu.uco.publiuco.service.mapper.entityassembler.EntityAssembler;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -23,6 +27,10 @@ public class CiudadEntityAssembler implements EntityAssembler<CityEntity, CityDo
 
     @Override
     public CityEntity assembleEntity(CityDomain domain) {
-        return modelMapper.map(domain, CityEntity.class);
+        CityEntity city =modelMapper.map(domain, CityEntity.class);
+//        CountryEntity country = new CountryEntity(domain.getDepartment().getCountryDomain().getId(), domain.getDepartment().getCountryDomain().getName());
+//        DepartmentEntity department = new DepartmentEntity(domain.getDepartment().getId(),country,domain.getDepartment().getName());
+//        city.setDepartamentEntity(department);
+        return city;
     }
 }

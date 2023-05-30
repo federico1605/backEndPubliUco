@@ -19,11 +19,11 @@ public class CityExistSpecification extends CompositeSpecification<CityDomain> {
     @Override
     public boolean isSatisfyBy(CityDomain cityDomain) {
         try {
-            Optional<CityEntity> response = cityRepository.findCityByDepartment(cityDomain.getDepartment().getId(), cityDomain.getName());
+            Optional<CityEntity> response = cityRepository.findCityByDepartment(cityDomain.getDepartment().getId());
             if (response.isEmpty()) {
-                throw ServicePubliUcoCustomException.createUserException("La ciudad ya esta registrado");
+                return false;
             }
-        } catch (Exception exception) {
+        } catch (ServicePubliUcoCustomException exception) {
             throw ServicePubliUcoCustomException.createUserException("Error al obtener la ciudad "+exception.getMessage());
         }
         return true;

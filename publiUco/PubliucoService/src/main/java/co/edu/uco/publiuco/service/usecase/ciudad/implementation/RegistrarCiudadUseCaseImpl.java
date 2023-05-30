@@ -28,7 +28,7 @@ public class RegistrarCiudadUseCaseImpl implements RegistrarCiudadUseCase {
             domain.setId(UtilUUID.getNewUUID());
             CityEntity entity = entityAssembler.assembleEntity(domain);
             validCitySpecification.isSatisfyBy(domain);
-            cityRepository.createCityByDepartment(entity.getId(),entity.getDepartmentEntity().getId()
+            cityRepository.createCityByDepartment(entity.getId(),entity.getDepartment().getId()
                     ,entity.getName());
         } catch (ServicePubliUcoCustomException exception) {
             throw exception;

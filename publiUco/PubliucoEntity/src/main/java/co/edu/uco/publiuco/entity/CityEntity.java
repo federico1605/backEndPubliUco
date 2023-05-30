@@ -20,7 +20,7 @@ public class CityEntity {
     private UUID id;
     @ManyToOne
     @JoinColumn(name = "departamento")
-    private DepartmentEntity departmentEntity;
+    private DepartmentEntity department;
     @Column(name = "nombre")
     private String name;
 
@@ -47,15 +47,15 @@ public class CityEntity {
         this.id = getDefaultUUID(id);
     }
 
-    public DepartmentEntity getDepartmentEntity() {
-        if (isNull(departmentEntity)) {
+    public DepartmentEntity getDepartment() {
+        if (isNull(department)) {
             setDepartamentEntity(new DepartmentEntity());
         }
-        return departmentEntity;
+        return department;
     }
 
     public void setDepartamentEntity(final DepartmentEntity departmentEntity) {
-        this.departmentEntity = getDefaultIfNull(departmentEntity, new DepartmentEntity());
+        this.department = getDefaultIfNull(departmentEntity, new DepartmentEntity());
     }
 
     public String getName() {
