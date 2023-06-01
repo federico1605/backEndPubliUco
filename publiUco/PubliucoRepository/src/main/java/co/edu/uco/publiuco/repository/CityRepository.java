@@ -13,8 +13,8 @@ import java.util.UUID;
 @Repository
 public interface CityRepository extends JpaRepository<CityEntity, UUID> {
 
-    @Query(value="SELECT * FROM public.ciudad b WHERE b.departamento = ?1", nativeQuery = true)
-    Optional<CityEntity> findCityByDepartment(UUID departmsentId);
+    @Query(value="SELECT * FROM public.ciudad WHERE departamento = ?1 AND codigo = ?2", nativeQuery = true)
+    Optional<CityEntity> findCityByDepartment(UUID departmsentId, UUID cityId);
 
     @Modifying
     @Query(value="INSERT INTO public.ciudad(codigo, departamento, nombre) VALUES(?1,?2,?3)", nativeQuery = true)

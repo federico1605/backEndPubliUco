@@ -2,7 +2,6 @@ package co.edu.uco.publiuco.service.domain.build;
 
 import co.edu.uco.publiuco.crosscutting.utils.UtilText;
 import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
-import co.edu.uco.publiuco.dto.CountryDTO;
 import co.edu.uco.publiuco.service.domain.CountryDomain;
 import co.edu.uco.publiuco.service.domain.DepartmentDomain;
 

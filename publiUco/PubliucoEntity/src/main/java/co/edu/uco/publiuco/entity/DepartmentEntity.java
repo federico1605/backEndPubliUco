@@ -8,7 +8,6 @@ import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getDefaultIfNull
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getStringAsUUID;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.EMPTY;
-import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilUUID.getDefaultUUID;
 
 @Entity
@@ -25,21 +24,22 @@ public class DepartmentEntity {
     private String name;
 
     public DepartmentEntity(UUID id, CountryEntity countryEntity, String name) {
-        this.id = id;
-        this.countryEntity = countryEntity;
-        this.name = name;
+        setId(id);
+        setCountryEntity(countryEntity);
+        setName(name);
     }
 
     public DepartmentEntity() {
         setId(getStringAsUUID());
-        setCountryEntity(new CountryEntity());
+        setCountryEntity(countryEntity);
         setName(EMPTY);
     }
 
+    public static DepartmentEntity build (UUID id,CountryEntity countryEntity, String name) {
+        return new DepartmentEntity(id,countryEntity,name);
+    }
+
     public UUID getId() {
-        if (isNull(id)){
-            setId(getStringAsUUID());
-        }
         return id;
     }
 
@@ -48,9 +48,6 @@ public class DepartmentEntity {
     }
 
     public CountryEntity getCountryEntity() {
-        if (isNull(countryEntity)) {
-            setCountryEntity(new CountryEntity());
-        }
         return countryEntity;
     }
 
@@ -59,9 +56,6 @@ public class DepartmentEntity {
     }
 
     public String getName() {
-        if (isNull(name)) {
-            setName(EMPTY);
-        }
         return name;
     }
 

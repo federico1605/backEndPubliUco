@@ -19,7 +19,8 @@ public class CityExistSpecification extends CompositeSpecification<CityDomain> {
     @Override
     public boolean isSatisfyBy(CityDomain cityDomain) {
         try {
-            Optional<CityEntity> response = cityRepository.findCityByDepartment(cityDomain.getDepartment().getId());
+            Optional<CityEntity> response = cityRepository.findCityByDepartment(cityDomain.getDepartment().getId(),
+                    cityDomain.getId());
             if (response.isEmpty()) {
                 return false;
             }

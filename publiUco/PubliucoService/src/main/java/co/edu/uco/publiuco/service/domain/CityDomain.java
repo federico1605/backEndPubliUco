@@ -19,9 +19,9 @@ public class CityDomain {
     }
 
     public CityDomain() {
-        setId(null);
-        setDepartment(null);
-        setName(null);
+        setId(UtilUUID.DEFAULT_UUID);
+        setDepartment(department);
+        setName(UtilText.EMPTY);
     }
 
     public static CityDomain build(final UUID id, final DepartmentDomain departmentDomain, final String name) {
@@ -49,7 +49,7 @@ public class CityDomain {
     }
 
     public void setName(final String name) {
-        this.name = UtilText.getDefaultString(name);
+        this.name = UtilText.applyTrim(name);
     }
 
 }

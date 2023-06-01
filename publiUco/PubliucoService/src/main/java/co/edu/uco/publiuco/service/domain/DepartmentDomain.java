@@ -3,7 +3,6 @@ package co.edu.uco.publiuco.service.domain;
 import co.edu.uco.publiuco.crosscutting.utils.UtilObject;
 import co.edu.uco.publiuco.crosscutting.utils.UtilText;
 import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
-import co.edu.uco.publiuco.dto.CountryDTO;
 import co.edu.uco.publiuco.service.domain.build.CountryDomainBuilder;
 
 import java.util.UUID;
@@ -20,9 +19,9 @@ public class DepartmentDomain {
     }
 
     public DepartmentDomain() {
-        setName(null);
-        setId(null);
-        setCountryDomain(null);
+        setName(UtilText.EMPTY);
+        setId(UtilUUID.DEFAULT_UUID);
+        setCountryDomain(countryDomain);
     }
 
     public static DepartmentDomain build(UUID id, CountryDomain countryDomain, String name) {

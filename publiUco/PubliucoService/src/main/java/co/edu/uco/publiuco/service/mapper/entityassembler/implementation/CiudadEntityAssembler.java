@@ -7,7 +7,6 @@ import co.edu.uco.publiuco.service.domain.CityDomain;
 import co.edu.uco.publiuco.service.mapper.entityassembler.EntityAssembler;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeMap;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,7 +17,7 @@ public class CiudadEntityAssembler implements EntityAssembler<CityEntity, CityDo
         this.modelMapper = new ModelMapper();
     }
 
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     @Override
     public CityDomain assembleDomain(CityEntity entity) {
@@ -27,10 +26,8 @@ public class CiudadEntityAssembler implements EntityAssembler<CityEntity, CityDo
 
     @Override
     public CityEntity assembleEntity(CityDomain domain) {
-        CityEntity city =modelMapper.map(domain, CityEntity.class);
-//        CountryEntity country = new CountryEntity(domain.getDepartment().getCountryDomain().getId(), domain.getDepartment().getCountryDomain().getName());
-//        DepartmentEntity department = new DepartmentEntity(domain.getDepartment().getId(),country,domain.getDepartment().getName());
-//        city.setDepartamentEntity(department);
-        return city;
+        TypeMap<CityDomain, CityEntity> typeMap = this.modelMapper.createTypeMap(CityDomain.class, CityEntity.class);
+        typeMap.addMappings(modelMapper1 -> modelMapper1.map(CityDomain::getDepartment,CityEntity::setDepartmentEntity));
+        return modelMapper.map(domain, CityEntity.class);
     }
 }

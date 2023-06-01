@@ -1,5 +1,7 @@
 package co.edu.uco.publiuco.entity;
 
+import co.edu.uco.publiuco.crosscutting.utils.UtilText;
+import co.edu.uco.publiuco.crosscutting.utils.UtilUUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -21,6 +23,7 @@ public class CountryEntity {
     private UUID id;
     @Column(name = "nombre")
     private String name;
+
     public CountryEntity(UUID id, String name) {
         this.id = id;
         this.name = name;
@@ -31,25 +34,22 @@ public class CountryEntity {
         setName(EMPTY);
     }
 
+    public static CountryEntity build(UUID id, String name) {
+        return new CountryEntity(id, name);
+    }
+
     public UUID getId() {
-        if (isNull(id)){
-            setId(getStringAsUUID());
-        }
         return id;
     }
 
-    public void setId(final UUID id) {
-        this.id = getDefaultUUID(id);
-    }
-
     public String getName() {
-        if (isNull(name)) {
-            setName(EMPTY);
-        }
         return name;
     }
 
-    public void setName(final String name) {
-        this.name = applyTrim(name);
+    public void setId(UUID id) {
+        this.id = UtilUUID.getDefaultUUID(id);
     }
-}
+
+    public void setName(String name) {
+        this.name = UtilText.getDefaultString(name);
+    }}
