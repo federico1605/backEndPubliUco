@@ -5,12 +5,14 @@ import co.edu.uco.publiuco.entity.CityEntity;
 import co.edu.uco.publiuco.repository.CityRepository;
 import co.edu.uco.publiuco.service.domain.CityDomain;
 import co.edu.uco.publiuco.service.specification.CompositeSpecification;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
 @Component
+@Slf4j
 public class CityExistSpecification extends CompositeSpecification<CityDomain> {
 
     @Autowired
@@ -20,8 +22,9 @@ public class CityExistSpecification extends CompositeSpecification<CityDomain> {
     public boolean isSatisfyBy(CityDomain cityDomain) {
         try {
             Optional<CityEntity> response = cityRepository.findCityByDepartment(cityDomain.getDepartment().getId(),
-                    cityDomain.getId());
-            if (response.isEmpty()) {
+                    cityDomain.getName());
+            if (response.isPresent()) {
+                log.error("Error tratando de crear la ciudad, el nombre de la ciudad ya esta registrado");
                 return false;
             }
         } catch (ServicePubliUcoCustomException exception) {
