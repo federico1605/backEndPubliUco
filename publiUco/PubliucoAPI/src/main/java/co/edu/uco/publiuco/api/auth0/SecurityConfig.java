@@ -22,20 +22,26 @@ public class SecurityConfig {
     @Value("${spring.security.oauth2.resource-server.jwt.issuer-uri}")
     private String issuer;
 
+    private final LogoutHandlerImpl logoutHandler;
+
+    public SecurityConfig(LogoutHandlerImpl logoutHandler) {
+        this.logoutHandler = logoutHandler;
+    }
+
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         /*
         This is where we configure the security required for our endpoints and set up our app to serve as
         an OAuth2 Resource Server, using JWT validation.
         */
-        http.authorizeHttpRequests()
+        return http.authorizeHttpRequests()
                 .requestMatchers("/login/**").permitAll()
                 .anyRequest().authenticated()
                 .and().oauth2Login()
                 .and().logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .addLogoutHandler();
-        return http.build();
+                .addLogoutHandler(logoutHandler).and().build();
     }
 
     @Bean
