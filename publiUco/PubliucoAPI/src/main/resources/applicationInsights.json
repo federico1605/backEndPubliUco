@@ -1,0 +1,6 @@
+{
+  "connectionString":"InstrumentationKey=6abd81bb-0428-4a62-9733-587607376cc8;IngestionEndpoint=https://westus2-2.in.applicationinsights.azure.com/;LiveEndpoint=https://westus2.livediagnostics.monitor.azure.com/;",
+  "role": {
+    "name": "telemetryPubliUco"
+  }
+}

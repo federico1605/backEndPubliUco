@@ -39,6 +39,7 @@ public class CityController {
             facade.execute(city);
             response.addData(city);
             response.addMessage(Message.createSuccessMessage("City register succesfully", "The City has register succesfully :)"));
+            log.info("City register succesfully");
             mailPort.sendMail("City register succesfully" , "federico.zapata4970@soyuco.edu.co", "The City  a register succesfully");
         } catch (PubliUcoCustomException exception) {
             httpStatus = HttpStatus.BAD_REQUEST;

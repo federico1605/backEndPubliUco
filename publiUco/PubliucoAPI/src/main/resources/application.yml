@@ -43,3 +43,6 @@ spring:
         format_sql: true
 email: fede.zapata16@gmail.com
 email-receiver: federico.zapata4970@soyuco.edu.co
+azure:
+  application-insights:
+    instrumentation-key: ${Telemetria-key}

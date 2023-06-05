@@ -25,7 +25,7 @@ public class ValidCitySpecification extends CompositeSpecification<CityDomain> {
     public boolean isSatisfyBy(CityDomain cityDomain) {
         try {
             return cityIsNotDefault.and(cityIdValid)
-                    .andNot(cityExist).and(cityNameValid).isSatisfyBy(cityDomain);
+                    .and(cityExist).and(cityNameValid).isSatisfyBy(cityDomain);
         }catch (ServicePubliUcoCustomException e){
             throw e;
         }

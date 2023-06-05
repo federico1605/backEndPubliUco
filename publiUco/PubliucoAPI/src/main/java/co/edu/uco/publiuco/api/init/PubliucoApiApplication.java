@@ -1,6 +1,7 @@
 package co.edu.uco.publiuco.api.init;
 
 import com.azure.security.keyvault.secrets.SecretClient;
+import com.microsoft.applicationinsights.attach.ApplicationInsights;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +21,7 @@ public class PubliucoApiApplication {
 
 
     public static void main(String[] args) {
+        ApplicationInsights.attach();
         SpringApplication.run(PubliucoApiApplication.class, args);
     }
 

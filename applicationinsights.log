@@ -1,0 +1,19 @@
+2023-06-05 12:49:32.389-05:00 ERROR c.m.applicationinsights.agent - 
+*************************
+Application Insights Java Agent 3.4.13 startup failed (PID 8480)
+*************************
+
+Description:
+No connection string provided
+
+Action:
+Please provide connection string.
+
+2023-06-05 12:58:32.468-05:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.4.13 started successfully (PID 19216, JVM running for 12.955 s)
+2023-06-05 12:58:32.481-05:00 INFO  c.m.applicationinsights.agent - Java version: 20.0.1, vendor: Oracle Corporation, home: C:\Users\Federico\.jdks\openjdk-20.0.1
+2023-06-05 13:00:13.926-05:00 ERROR c.azure.core.http.policy.RetryPolicy - {"az.sdk.message":"Retry attempts have been exhausted.","exception":"connection timed out: /169.254.169.254:80","tryCount":3}
+2023-06-05 13:11:54.495-05:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.4.13 started successfully (PID 1116, JVM running for 9.306 s)
+2023-06-05 13:11:54.510-05:00 INFO  c.m.applicationinsights.agent - Java version: 20.0.1, vendor: Oracle Corporation, home: C:\Users\Federico\.jdks\openjdk-20.0.1
+2023-06-05 13:13:58.932-05:00 ERROR c.azure.core.http.policy.RetryPolicy - {"az.sdk.message":"Retry attempts have been exhausted.","exception":"connection timed out: /169.254.169.254:80","tryCount":3}
+2023-06-05 13:14:14.037-05:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.4.13 started successfully (PID 7084, JVM running for 9.155 s)
+2023-06-05 13:14:14.052-05:00 INFO  c.m.applicationinsights.agent - Java version: 20.0.1, vendor: Oracle Corporation, home: C:\Users\Federico\.jdks\openjdk-20.0.1
