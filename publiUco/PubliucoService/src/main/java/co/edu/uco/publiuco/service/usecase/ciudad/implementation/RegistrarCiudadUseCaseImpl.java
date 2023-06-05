@@ -14,14 +14,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class RegistrarCiudadUseCaseImpl implements RegistrarCiudadUseCase {
 
-    @Autowired
-    private CityRepository cityRepository;
+    private final CityRepository cityRepository;
+    private final EntityAssembler<CityEntity, CityDomain> entityAssembler;
+    private final ValidCitySpecification validCitySpecification;
 
-    @Autowired
-    private EntityAssembler<CityEntity, CityDomain> entityAssembler;
+    public RegistrarCiudadUseCaseImpl(CityRepository cityRepository, EntityAssembler<CityEntity, CityDomain> entityAssembler, ValidCitySpecification validCitySpecification) {
+        this.cityRepository = cityRepository;
+        this.entityAssembler = entityAssembler;
+        this.validCitySpecification = validCitySpecification;
+    }
 
-    @Autowired
-    private ValidCitySpecification validCitySpecification;
     @Override
     public void execute(CityDomain domain) {
         try {

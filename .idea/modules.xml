@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/publiUco/PubliucoAPI/PubliucoAPI.iml" filepath="$PROJECT_DIR$/publiUco/PubliucoAPI/PubliucoAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/publiUco/PubliucoCrossCutting/PubliucoCrossCutting.iml" filepath="$PROJECT_DIR$/publiUco/PubliucoCrossCutting/PubliucoCrossCutting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/publiUco/PubliucoDTO/PubliucoDTO.iml" filepath="$PROJECT_DIR$/publiUco/PubliucoDTO/PubliucoDTO.iml" />
       <module fileurl="file://$PROJECT_DIR$/publiUco/PubliucoEntity/PubliucoEntity.iml" filepath="$PROJECT_DIR$/publiUco/PubliucoEntity/PubliucoEntity.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/backEndPubliUco21.iml" filepath="$PROJECT_DIR$/.idea/backEndPubliUco21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/publiUco/PubliucoRepository/PubliucoRepository.iml" filepath="$PROJECT_DIR$/publiUco/PubliucoRepository/PubliucoRepository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/publiUco/PubliucoService/PubliucoService.iml" filepath="$PROJECT_DIR$/publiUco/PubliucoService/PubliucoService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/publiUco/UcoCrossCutting/UcoCrossCutting.iml" filepath="$PROJECT_DIR$/publiUco/UcoCrossCutting/UcoCrossCutting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/backEndPubliUco.iml" filepath="$PROJECT_DIR$/.idea/backEndPubliUco.iml" />
     </modules>
   </component>
 </project>

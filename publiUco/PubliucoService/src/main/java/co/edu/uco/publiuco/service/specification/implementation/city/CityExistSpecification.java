@@ -15,8 +15,11 @@ import java.util.Optional;
 @Slf4j
 public class CityExistSpecification extends CompositeSpecification<CityDomain> {
 
-    @Autowired
-    private CityRepository cityRepository;
+    private final CityRepository cityRepository;
+
+    public CityExistSpecification(CityRepository cityRepository) {
+        this.cityRepository = cityRepository;
+    }
 
     @Override
     public boolean isSatisfyBy(CityDomain cityDomain) {

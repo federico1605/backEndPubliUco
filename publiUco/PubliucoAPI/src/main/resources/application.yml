@@ -1,8 +1,42 @@
 auth0:
-  audience: {647982b810bbe49ca38db573}
+  audience: https://dev-uut3mgn6yn6odyvb.us.auth0.com/api/v2/
 spring:
   security:
     oauth2:
+      client:
+        registration:
+          auth0:
+
+            client-id: JVqIMQqBya1yQ4gC1hivIL1rFaK7u2CZ
+            client-secret: 6a51IKORrJzEruGFx3oBT3WQcpK4NKQJsmeWodMyHdXWOVeHcbGNSGqumg9G3zoT
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          auth0:
+            # trailing slash is important!
+            issuer-uri: https://dev-uut3mgn6yn6odyvb.us.auth0.com/
       resource-server:
         jwt:
-          issuer-uri: http://localhost:8080/api/v1/login
+          issuer-uri: https://dev-uut3mgn6yn6odyvb.us.auth0.com/
+
+  cloud:
+    azure:
+      keyvault:
+        secret:
+          property-sources-enable: true
+          property-sources[0]:
+            endpoint: https://publiucokey.vault.azure.net/
+
+  datasource:
+    url: ${datasource-url}
+    username: ${data-username}
+    password: ${data-password}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
