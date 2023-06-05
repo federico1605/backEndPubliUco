@@ -1,8 +1,6 @@
 package co.edu.uco.publiuco.service.mapper.entityassembler.implementation;
 
 import co.edu.uco.publiuco.entity.CityEntity;
-import co.edu.uco.publiuco.entity.CountryEntity;
-import co.edu.uco.publiuco.entity.DepartmentEntity;
 import co.edu.uco.publiuco.service.domain.CityDomain;
 import co.edu.uco.publiuco.service.mapper.entityassembler.EntityAssembler;
 import org.modelmapper.ModelMapper;
@@ -26,7 +24,11 @@ public class CiudadEntityAssembler implements EntityAssembler<CityEntity, CityDo
 
     @Override
     public CityEntity assembleEntity(CityDomain domain) {
-        TypeMap<CityDomain, CityEntity> typeMap = this.modelMapper.createTypeMap(CityDomain.class, CityEntity.class);
+        TypeMap<CityDomain, CityEntity> typeMap = modelMapper.getTypeMap(CityDomain.class, CityEntity.class);
+        if (typeMap == null) {
+            typeMap = this.modelMapper.createTypeMap(CityDomain.class, CityEntity.class);
+
+        }
         typeMap.addMappings(modelMapper1 -> modelMapper1.map(CityDomain::getDepartment,CityEntity::setDepartmentEntity));
         return modelMapper.map(domain, CityEntity.class);
     }

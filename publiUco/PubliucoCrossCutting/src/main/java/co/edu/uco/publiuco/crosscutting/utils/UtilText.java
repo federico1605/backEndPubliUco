@@ -3,6 +3,7 @@ package co.edu.uco.publiuco.crosscutting.utils;
 import java.util.Objects;
 
 import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getDefaultIfNull;
+import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getUtilObject;
 
 public class UtilText {
 
@@ -26,5 +27,8 @@ public class UtilText {
 
     public static final boolean isEmpty(String value) {
         return Objects.equals(value, EMPTY);
+    }
+    public static boolean isNull(String value) {
+        return UtilObject.isNull(value);
     }
 }

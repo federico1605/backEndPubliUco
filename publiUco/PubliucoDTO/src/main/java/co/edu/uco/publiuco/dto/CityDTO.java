@@ -6,7 +6,6 @@ import java.util.UUID;
 
 import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.getDefaultIfNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.EMPTY;
-import static co.edu.uco.publiuco.crosscutting.utils.UtilObject.isNull;
 import static co.edu.uco.publiuco.crosscutting.utils.UtilText.applyTrim;
 
 public class CityDTO {

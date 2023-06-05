@@ -1,14 +1,15 @@
 auth0:
   audience: https://dev-uut3mgn6yn6odyvb.us.auth0.com/api/v2/
 spring:
+  sendgrid:
+    api-key: ${apiSedGrip}
   security:
     oauth2:
       client:
         registration:
           auth0:
-
-            client-id: JVqIMQqBya1yQ4gC1hivIL1rFaK7u2CZ
-            client-secret: 6a51IKORrJzEruGFx3oBT3WQcpK4NKQJsmeWodMyHdXWOVeHcbGNSGqumg9G3zoT
+            client-id: ${client-id-auth0}
+            client-secret: ${client-scret-aut0}
             scope:
               - openid
               - profile
@@ -16,10 +17,10 @@ spring:
         provider:
           auth0:
             # trailing slash is important!
-            issuer-uri: https://dev-uut3mgn6yn6odyvb.us.auth0.com/
+            issuer-uri: ${issuer-uri-aut0}
       resource-server:
         jwt:
-          issuer-uri: https://dev-uut3mgn6yn6odyvb.us.auth0.com/
+          issuer-uri: ${issuer-uri-jwt-auth0}
 
   cloud:
     azure:
@@ -40,3 +41,5 @@ spring:
     properties:
       hibernate:
         format_sql: true
+email: fede.zapata16@gmail.com
+email-receiver: federico.zapata4970@soyuco.edu.co

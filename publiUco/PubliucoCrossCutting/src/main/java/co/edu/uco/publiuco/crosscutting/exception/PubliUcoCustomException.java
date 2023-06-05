@@ -40,5 +40,4 @@ public class PubliUcoCustomException extends RuntimeException {
     public final boolean isTechnicalException() {
         return isEmpty(getUserMessage());
     }
-
 }
