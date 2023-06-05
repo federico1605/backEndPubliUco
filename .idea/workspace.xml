@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abc227b4-f011-4de2-b9b4-38c0e2794d81" name="Changes" comment="Se agrego el controller, sendgrip y se arreglo bud de typemap">
-      <change afterPath="$PROJECT_DIR$/applicationinsights.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/publiUco/PubliucoAPI/src/main/resources/applicationInsights.json" afterDir="false" />
+    <list default="true" id="abc227b4-f011-4de2-b9b4-38c0e2794d81" name="Changes" comment="Se agrego la telemtría y se organizo error de validadores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publiUco/PubliucoAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/publiUco/PubliucoAPI/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publiUco/PubliucoAPI/src/main/java/co/edu/uco/publiuco/api/controller/ciudad/CityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/publiUco/PubliucoAPI/src/main/java/co/edu/uco/publiuco/api/controller/ciudad/CityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publiUco/PubliucoAPI/src/main/java/co/edu/uco/publiuco/api/init/PubliucoApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/publiUco/PubliucoAPI/src/main/java/co/edu/uco/publiuco/api/init/PubliucoApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publiUco/PubliucoAPI/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/publiUco/PubliucoAPI/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publiUco/PubliucoService/src/main/java/co/edu/uco/publiuco/service/specification/implementation/city/CityIdValidSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/publiUco/PubliucoService/src/main/java/co/edu/uco/publiuco/service/specification/implementation/city/CityIdValidSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publiUco/PubliucoService/src/main/java/co/edu/uco/publiuco/service/specification/implementation/city/CityNameValidSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/publiUco/PubliucoService/src/main/java/co/edu/uco/publiuco/service/specification/implementation/city/CityNameValidSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publiUco/PubliucoService/src/main/java/co/edu/uco/publiuco/service/specification/implementation/city/ValidCitySpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/publiUco/PubliucoService/src/main/java/co/edu/uco/publiuco/service/specification/implementation/city/ValidCitySpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applicationinsights.log" beforeDir="false" afterPath="$PROJECT_DIR$/applicationinsights.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publiUco/PubliucoService/src/main/java/co/edu/uco/publiuco/service/specification/implementation/city/CityExistSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/publiUco/PubliucoService/src/main/java/co/edu/uco/publiuco/service/specification/implementation/city/CityExistSpecification.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +126,7 @@
       <workItem from="1685827762502" duration="44443000" />
       <workItem from="1685938279470" duration="10205000" />
       <workItem from="1685981142954" duration="721000" />
-      <workItem from="1685986654582" duration="2054000" />
+      <workItem from="1685986654582" duration="2736000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrego el controller, sendgrip y se arreglo bud de typemap">
       <created>1685948537645</created>
@@ -142,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685948537645</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Se agrego la telemtría y se organizo error de validadores">
+      <created>1685989004319</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685989004319</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,17 +162,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Se agrego el controller, sendgrip y se arreglo bud de typemap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrego el controller, sendgrip y se arreglo bud de typemap" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/publiUco/PubliucoService/src/main/java/co/edu/uco/publiuco/service/usecase/ciudad/implementation/RegistrarCiudadUseCaseImpl.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Se agrego la telemtría y se organizo error de validadores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrego la telemtría y se organizo error de validadores" />
   </component>
 </project>

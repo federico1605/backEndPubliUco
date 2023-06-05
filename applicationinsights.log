@@ -17,3 +17,12 @@ Please provide connection string.
 2023-06-05 13:13:58.932-05:00 ERROR c.azure.core.http.policy.RetryPolicy - {"az.sdk.message":"Retry attempts have been exhausted.","exception":"connection timed out: /169.254.169.254:80","tryCount":3}
 2023-06-05 13:14:14.037-05:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.4.13 started successfully (PID 7084, JVM running for 9.155 s)
 2023-06-05 13:14:14.052-05:00 INFO  c.m.applicationinsights.agent - Java version: 20.0.1, vendor: Oracle Corporation, home: C:\Users\Federico\.jdks\openjdk-20.0.1
+2023-06-05 13:32:21.083-05:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.4.13 started successfully (PID 18544, JVM running for 7.212 s)
+2023-06-05 13:32:21.103-05:00 INFO  c.m.applicationinsights.agent - Java version: 20.0.1, vendor: Oracle Corporation, home: C:\Users\Federico\.jdks\openjdk-20.0.1
+2023-06-05 13:34:11.506-05:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.4.13 started successfully (PID 2740, JVM running for 8.292 s)
+2023-06-05 13:34:11.530-05:00 INFO  c.m.applicationinsights.agent - Java version: 20.0.1, vendor: Oracle Corporation, home: C:\Users\Federico\.jdks\openjdk-20.0.1
+2023-06-05 13:35:54.610-05:00 ERROR c.azure.core.http.policy.RetryPolicy - {"az.sdk.message":"Retry attempts have been exhausted.","exception":"connection timed out: /169.254.169.254:80","tryCount":3}
+2023-06-05 13:36:36.424-05:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.4.13 started successfully (PID 4696, JVM running for 7.622 s)
+2023-06-05 13:36:36.444-05:00 INFO  c.m.applicationinsights.agent - Java version: 20.0.1, vendor: Oracle Corporation, home: C:\Users\Federico\.jdks\openjdk-20.0.1
+2023-06-05 13:38:22.150-05:00 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.4.13 started successfully (PID 15456, JVM running for 6.918 s)
+2023-06-05 13:38:22.170-05:00 INFO  c.m.applicationinsights.agent - Java version: 20.0.1, vendor: Oracle Corporation, home: C:\Users\Federico\.jdks\openjdk-20.0.1

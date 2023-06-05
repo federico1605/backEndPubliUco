@@ -27,8 +27,7 @@ public class CityExistSpecification extends CompositeSpecification<CityDomain> {
             Optional<CityEntity> response = cityRepository.findCityByDepartment(cityDomain.getDepartment().getId(),
                     cityDomain.getName());
             if (response.isPresent()) {
-                log.error("Error tratando de crear la ciudad, el nombre de la ciudad ya esta registrado");
-                return false;
+                throw ServicePubliUcoCustomException.createUserException("Error tratando de crear la ciudad, el nombre de la ciudad ya esta registrado");
             }
         } catch (ServicePubliUcoCustomException exception) {
             throw ServicePubliUcoCustomException.createUserException("Error al obtener la ciudad "+exception.getMessage());
